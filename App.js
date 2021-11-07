@@ -1,13 +1,9 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import Landing from "./Components/Landing";
+import RouteStack from "./routes/routeStack";
 export default function App() {
-	return (
-		<View style={styles.container}>
-			<Landing />
-		</View>
-	);
+	return <RouteStack />;
 }
 
 const styles = StyleSheet.create({

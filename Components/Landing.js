@@ -64,8 +64,9 @@ const styles = StyleSheet.create({
 	},
 	loginContainer: {
 		backgroundColor: "white",
-		borderRadius: 60,
+		borderRadius: 20,
 		marginTop: -20,
+		flex: 1,
 	},
 	logo: {
 		height: 150,
