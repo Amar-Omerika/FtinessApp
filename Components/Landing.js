@@ -3,12 +3,14 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import landingImage from "../assets/landingImage.png";
 import logo from "../assets/logo.png";
 
-export default function Landing() {
+export default function Landing({ navigation }) {
 	return (
 		<View style={styles.container}>
 			<Image source={landingImage} style={{ height: 250, zIndex: -1 }} />
+
 			<View style={styles.loginContainer}>
 				<Image source={logo} style={styles.logo} />
+
 				<TouchableOpacity
 					style={{
 						backgroundColor: "#4267B2",
@@ -19,6 +21,7 @@ export default function Landing() {
 						borderRadius: 50,
 						alignSelf: "center",
 					}}
+					onPress={() => navigation.navigate("Login")}
 				>
 					<Text
 						style={{
