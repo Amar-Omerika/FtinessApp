@@ -13,7 +13,7 @@ import landingImage from "../assets/landingImage.png";
 import mailIcon from "../assets/mailIcon.png";
 import passwordIcon from "../assets/passwordIcon.png";
 
-export default function Login() {
+export default function Login({ navigation }) {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	return (
@@ -117,11 +117,13 @@ export default function Login() {
 						</Text>
 					</TouchableOpacity>
 					<View style={{ alignSelf: "center", marginTop: 20 }}>
-						<Text
-							style={{ color: "#C0C0C0", fontWeight: "bold", fontSize: 15 }}
-						>
-							Dont have account? Sign up
-						</Text>
+						<TouchableOpacity onPress={() => navigation.navigate("Register")}>
+							<Text
+								style={{ color: "#C0C0C0", fontWeight: "bold", fontSize: 15 }}
+							>
+								Dont have account? Sign up
+							</Text>
+						</TouchableOpacity>
 					</View>
 				</View>
 			</View>

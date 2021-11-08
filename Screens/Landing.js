@@ -44,6 +44,7 @@ export default function Landing({ navigation }) {
 						borderRadius: 50,
 						alignSelf: "center",
 					}}
+					onPress={() => navigation.navigate("Register")}
 				>
 					<Text
 						style={{
