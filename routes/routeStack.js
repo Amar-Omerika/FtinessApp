@@ -5,17 +5,29 @@ import Login from "../Screens/Login";
 import Register from "../Screens/Register";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import Sessions from "../Screens/Sessions";
+import HomeTabs from "./bottomTabNavigator";
+const Stack = createNativeStackNavigator();
 export default function routeStack() {
-	const Stack = createNativeStackNavigator();
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName="Landing">
+			<Stack.Navigator initialRouteName={Landing}>
+				<Stack.Screen
+					name="HomeTabs"
+					component={HomeTabs}
+					options={{ headerShown: false }}
+				/>
 				<Stack.Screen
 					name="Landing"
 					component={Landing}
 					options={{ headerShown: false }}
 				/>
+				<Stack.Screen
+					name="Sessions"
+					component={Sessions}
+					options={{ headerShown: false }}
+				/>
+
 				<Stack.Screen
 					name="Login"
 					component={Login}
@@ -31,9 +43,3 @@ export default function routeStack() {
 		</NavigationContainer>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-	},
-});
