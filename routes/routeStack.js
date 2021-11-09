@@ -22,11 +22,7 @@ export default function routeStack() {
 					component={Landing}
 					options={{ headerShown: false }}
 				/>
-				<Stack.Screen
-					name="Sessions"
-					component={Sessions}
-					options={{ headerShown: false }}
-				/>
+				<Stack.Screen name="Sessions" component={Sessions} />
 
 				<Stack.Screen
 					name="Login"
