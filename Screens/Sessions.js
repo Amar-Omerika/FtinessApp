@@ -9,26 +9,7 @@ import {
 	ScrollView,
 	Dimensions,
 } from "react-native";
-
+import WorkoutCard from "../Components/WorkoutCard";
 export default function Sessions() {
-	return (
-		<View style={{ alignSelf: "center", marginTop: 50 }}>
-			<Text>askjdfkj</Text>
-		</View>
-	);
+	return <WorkoutCard />;
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-	},
-	loginContainer: {
-		backgroundColor: "white",
-		borderRadius: 20,
-		marginTop: -20,
-		height: 487,
-	},
-	inputContainer: {
-		alignSelf: "center",
-	},
-});

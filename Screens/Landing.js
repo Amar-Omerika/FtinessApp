@@ -57,12 +57,6 @@ export default function Landing({ navigation }) {
 						Register
 					</Text>
 				</TouchableOpacity>
-				<TouchableOpacity
-					style={{ marginTop: 20 }}
-					onPress={() => navigation.navigate("Sessions")}
-				>
-					<Text>Homescreeen</Text>
-				</TouchableOpacity>
 			</View>
 		</View>
 	);
