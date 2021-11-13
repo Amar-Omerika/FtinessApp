@@ -12,45 +12,123 @@ import {
 import BurnWotkoutImage from "../assets/BurnWorkoutImg.png";
 import star from "../assets/star.png";
 import mema from "../assets/mema.png";
+import weightLifting from "../assets/weightLifting.png";
+import cardio from "../assets/cardioImage.jpg";
 
-export default function WorkoutCard({ navigation }) {
+export default function WorkoutCard() {
 	return (
-		<View style={styles.container}>
-			<View style={{ marginTop: 20 }}>
-				<Image source={BurnWotkoutImage} style={styles.image} />
-				<View style={styles.informationContainer}>
-					<View style={{ flexDirection: "row", padding: 10 }}>
-						<Text
-							style={{
-								fontWeight: "bold",
-								fontSize: 15,
-							}}
-						>
-							Burn Workouts
-						</Text>
-						<View
-							style={{
-								backgroundColor: "#4267B2",
-								width: 80,
-								borderRadius: 10,
-								flexDirection: "row",
-								marginLeft: 100,
-							}}
-						>
-							<Text style={styles.rating}>4.9</Text>
-							<Image source={star} style={{ marginLeft: 20 }} />
+		<ScrollView>
+			<View style={styles.container}>
+				<View style={{ marginTop: 20 }}>
+					<Image source={BurnWotkoutImage} style={styles.image} />
+					<View style={styles.informationContainer}>
+						<View style={{ flexDirection: "row", padding: 10 }}>
+							<Text
+								style={{
+									fontWeight: "bold",
+									fontSize: 15,
+								}}
+							>
+								Burn Workouts
+							</Text>
+							<View
+								style={{
+									backgroundColor: "#4267B2",
+									width: 80,
+									borderRadius: 10,
+									flexDirection: "row",
+									marginLeft: 100,
+								}}
+							>
+								<Text style={styles.rating}>4.9</Text>
+								<Image source={star} style={{ marginLeft: 20 }} />
+							</View>
+						</View>
+						<View style={styles.profileView}>
+							<Image source={mema} style={styles.profilePictuers} />
+							<Image source={mema} style={styles.profilePictuers2} />
+							<Text
+								style={{ marginTop: 20, fontStyle: "italic", marginLeft: 2 }}
+							>
+								25 others liked this workout
+							</Text>
 						</View>
 					</View>
-					<View style={styles.profileView}>
-						<Image source={mema} style={styles.profilePictuers} />
-						<Image source={mema} style={styles.profilePictuers2} />
-						<Text style={{ marginTop: 20, fontStyle: "italic", marginLeft: 2 }}>
-							25 others liked this workout
-						</Text>
+				</View>
+				<View style={{ marginTop: 20 }}>
+					<Image source={weightLifting} style={styles.image} />
+					<View style={styles.informationContainer}>
+						<View style={{ flexDirection: "row", padding: 10 }}>
+							<Text
+								style={{
+									fontWeight: "bold",
+									fontSize: 15,
+								}}
+							>
+								Weight Lifting
+							</Text>
+							<View
+								style={{
+									backgroundColor: "#4267B2",
+									width: 80,
+									borderRadius: 10,
+									flexDirection: "row",
+									marginLeft: 100,
+								}}
+							>
+								<Text style={styles.rating}>5.0</Text>
+								<Image source={star} style={{ marginLeft: 20 }} />
+							</View>
+						</View>
+						<View style={styles.profileView}>
+							<Image source={mema} style={styles.profilePictuers} />
+							<Image source={mema} style={styles.profilePictuers2} />
+							<Text
+								style={{ marginTop: 20, fontStyle: "italic", marginLeft: 2 }}
+							>
+								33 others liked this workout
+							</Text>
+						</View>
+					</View>
+				</View>
+				<View style={{ marginTop: 20 }}>
+					<Image source={cardio} style={styles.image} />
+					<View style={styles.informationContainer}>
+						<View style={{ flexDirection: "row", padding: 10 }}>
+							<Text
+								style={{
+									fontWeight: "bold",
+									fontSize: 15,
+								}}
+							>
+								Cardio Workouts
+							</Text>
+							<View
+								style={{
+									backgroundColor: "#4267B2",
+									width: 80,
+									borderRadius: 10,
+									flexDirection: "row",
+									marginLeft: 100,
+								}}
+							>
+								<Text style={styles.rating}>4.9</Text>
+								<Image source={star} style={{ marginLeft: 20 }} />
+							</View>
+						</View>
+						<View style={styles.profileView}>
+							<Image source={mema} style={styles.profilePictuers} />
+							<Image source={mema} style={styles.profilePictuers2} />
+							<Text
+								style={{ marginTop: 20, fontStyle: "italic", marginLeft: 2 }}
+							>
+								28 others liked this workout
+							</Text>
+						</View>
 					</View>
 				</View>
 			</View>
-		</View>
+		</ScrollView>
 	);
 }
 

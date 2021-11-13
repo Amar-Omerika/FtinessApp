@@ -29,7 +29,11 @@ function LogoTitle() {
 
 function HomeTabs() {
 	return (
-		<Tab.Navigator>
+		<Tab.Navigator
+			screenOptions={{
+				tabBarStyle: { marginTop: 5 },
+			}}
+		>
 			<Tab.Screen
 				name="Landing"
 				component={Landing}
