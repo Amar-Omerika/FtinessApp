@@ -1,9 +1,15 @@
 import * as React from "react";
 import { Text, View, Image } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Sessions from "../Screens/Sessions";
 import Landing from "../Screens/Landing";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Libary from "../Screens/Libary";
+import FocusGroups from "../Screens/FocusGroup";
 import profile from "../assets/mema.png";
+import homeIcon from "../assets/homeIcon.png";
+import libaryIcon from "../assets/libaryIcon.png";
+import focusIcon from "../assets/focusIcon.png";
+
 const Tab = createBottomTabNavigator();
 function LogoTitle() {
 	return (
@@ -31,26 +37,75 @@ function HomeTabs() {
 	return (
 		<Tab.Navigator
 			screenOptions={{
-				tabBarStyle: { marginTop: 5 },
+				tabBarStyle: { marginTop: 5, height: 60 },
 			}}
 		>
 			<Tab.Screen
 				name="Landing"
 				component={Landing}
 				options={{
-					tabBarLabel: "Landing!",
+					tabBarLabel: "Home!",
 					headerShown: false,
+					tabBarIcon: (focused) => {
+						return (
+							<View
+								style={{
+									height: 50,
+									width: 50,
+								}}
+							>
+								<Image source={homeIcon} />
+							</View>
+						);
+					},
 				}}
 			/>
 			<Tab.Screen
-				name="Sessions"
-				component={Sessions}
+				name="FocusGroups"
+				component={FocusGroups}
 				options={{
-					tabBarLabel: "Home!",
+					tabBarLabel: "FocusGroups!",
 					headerTitle: (props) => <LogoTitle {...props} />,
 					headerStyle: {
 						backgroundColor: "#4267B2",
 						height: 100,
+					},
+					tabBarIcon: (focused) => {
+						return (
+							<View
+								style={{
+									height: 50,
+									width: 50,
+									marginTop: 5,
+								}}
+							>
+								<Image source={focusIcon} />
+							</View>
+						);
+					},
+				}}
+			/>
+			<Tab.Screen
+				name="Libary"
+				component={Libary}
+				options={{
+					tabBarLabel: "Libary!",
+					headerTitle: (props) => <LogoTitle {...props} />,
+					headerStyle: {
+						backgroundColor: "#4267B2",
+						height: 100,
+					},
+					tabBarIcon: (focused) => {
+						return (
+							<View
+								style={{
+									height: 50,
+									width: 50,
+								}}
+							>
+								<Image source={libaryIcon} />
+							</View>
+						);
 					},
 				}}
 			/>
