@@ -14,13 +14,17 @@ import star from "../assets/star.png";
 import mema from "../assets/mema.png";
 import weightLifting from "../assets/weightLifting.png";
 import cardio from "../assets/cardioImage.jpg";
+import { useNavigation } from "@react-navigation/native";
 
 export default function WorkoutCard() {
+	const navigation = useNavigation();
 	return (
 		<ScrollView>
 			<View style={styles.container}>
 				<View style={{ marginTop: 20 }}>
-					<Image source={BurnWotkoutImage} style={styles.image} />
+					<TouchableOpacity onPress={() => navigation.navigate("BurnWorkout")}>
+						<Image source={BurnWotkoutImage} style={styles.image} />
+					</TouchableOpacity>
 					<View style={styles.informationContainer}>
 						<View style={{ flexDirection: "row", padding: 10 }}>
 							<Text

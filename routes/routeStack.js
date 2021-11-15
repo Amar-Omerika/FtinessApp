@@ -7,6 +7,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Sessions from "../Screens/Sessions";
 import HomeTabs from "./bottomTabNavigator";
+import BurnWorkout from "../Screens/BurnWorkout";
 const Stack = createNativeStackNavigator();
 export default function routeStack() {
 	return (
@@ -33,6 +34,11 @@ export default function routeStack() {
 				<Stack.Screen
 					name="Register"
 					component={Register}
+					options={{ headerShown: false }}
+				/>
+				<Stack.Screen
+					name="BurnWorkout"
+					component={BurnWorkout}
 					options={{ headerShown: false }}
 				/>
 			</Stack.Navigator>

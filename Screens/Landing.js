@@ -57,6 +57,9 @@ export default function Landing({ navigation }) {
 						Register
 					</Text>
 				</TouchableOpacity>
+				<TouchableOpacity onPress={() => navigation.navigate("Sessions")}>
+					<Text>Sessions</Text>
+				</TouchableOpacity>
 			</View>
 		</View>
 	);
