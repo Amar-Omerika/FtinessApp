@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Sessions from "../Screens/Sessions";
 import HomeTabs from "./bottomTabNavigator";
 import BurnWorkout from "../Screens/BurnWorkout";
+import Header from "../Components/Header";
 const Stack = createNativeStackNavigator();
 export default function routeStack() {
 	return (
@@ -43,7 +44,12 @@ export default function routeStack() {
 				<Stack.Screen
 					name="BurnWorkout"
 					component={BurnWorkout}
-					options={{ headerShown: false }}
+					options={{
+						headerTitle: () => <Header />,
+						headerStyle: {
+							backgroundColor: "#4267B2",
+						},
+					}}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>

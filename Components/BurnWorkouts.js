@@ -14,7 +14,7 @@ export default function BurnWorkouts() {
 
 	const getData = async () => {
 		const res = await fetch(
-			"https://run.mocky.io/v3/c8c75a8c-bd80-41b0-85f6-6097d0cb235f"
+			"https://run.mocky.io/v3/198cf6d7-5f41-41a3-aac7-6458efaa509c"
 		);
 		const answer = await res.json();
 		setData(answer);
@@ -22,6 +22,7 @@ export default function BurnWorkouts() {
 	useEffect(() => {
 		getData();
 	}, []);
+
 	return (
 		<View style={styles.container}>
 			<Text style={styles.text}>Basic FlatList Example</Text>
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
 		borderRadius: 10,
 	},
 	description: {
-		backgroundColor: "#C0C0C0",
+		backgroundColor: "#E7E1E1",
 		height: 85,
 		flex: 1,
 		borderRadius: 10,
