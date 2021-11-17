@@ -8,7 +8,7 @@ import {
 	TextInput,
 	FlatList,
 } from "react-native";
-import proba from "../assets/proba.png";
+import { Linking } from "react-native";
 export default function BurnWorkouts() {
 	const [data, setData] = useState([]);
 
@@ -27,18 +27,23 @@ export default function BurnWorkouts() {
 			<Text style={styles.text}>Basic FlatList Example</Text>
 			<FlatList
 				data={data}
-				keyExtractor={(item) => item.id}
+				keyExtractor={(item) => item._id}
 				renderItem={({ item }) => (
-					<View
-						style={{ flexDirection: "row", marginBottom: 20, marginTop: 10 }}
-					>
-						<View>
-							<Image source={item.Image} style={styles.img} />
+					<TouchableOpacity onPress={() => Linking.openURL(item.link)}>
+						<View style={{ flexDirection: "row", marginTop: 10 }}>
+							<View>
+								<Image
+									source={{
+										uri: item.image,
+									}}
+									style={styles.img}
+								/>
+							</View>
+							<View style={styles.description}>
+								<Text style={styles.descriptionText}>{item.title}</Text>
+							</View>
 						</View>
-						<View style={styles.description}>
-							<Text style={styles.descriptionText}>{item.title}</Text>
-						</View>
-					</View>
+					</TouchableOpacity>
 				)}
 			/>
 		</View>
@@ -50,6 +55,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		marginTop: 50,
 		marginLeft: 5,
+		marginBottom: 20,
 	},
 	img: {
 		width: 133,
@@ -69,5 +75,6 @@ const styles = StyleSheet.create({
 		marginLeft: 4,
 		marginRight: 4,
 		marginTop: 3,
+		fontWeight: "bold",
 	},
 });
