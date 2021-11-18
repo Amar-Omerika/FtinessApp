@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Landing from "../Screens/Landing";
 import Libary from "../Screens/Libary";
 import FocusGroups from "../Screens/FocusGroup";
+import Sessions from "../Screens/Sessions";
 import Profile from "../Screens/Profile";
 import profile from "../assets/mema.png";
 import homeIcon from "../assets/homeIcon.png";
@@ -140,4 +141,11 @@ function HomeTabs() {
 		</Tab.Navigator>
 	);
 }
+const TempScreen = () => {
+	return (
+		<View>
+			<Text></Text>
+		</View>
+	);
+};
 export default HomeTabs;

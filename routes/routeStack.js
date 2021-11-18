@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+	StyleSheet,
+	Text,
+	View,
+	Image,
+	TouchableOpacity,
+	Button,
+} from "react-native";
 import Landing from "../Screens/Landing";
 import Login from "../Screens/Login";
 import Register from "../Screens/Register";
@@ -27,7 +34,16 @@ export default function routeStack() {
 				<Stack.Screen
 					name="Sessions"
 					component={Sessions}
-					options={{ headerShown: false }}
+					options={{
+						title: "Sessions",
+						headerStyle: {
+							backgroundColor: "#4267B2",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "bold",
+						},
+					}}
 				/>
 
 				<Stack.Screen
@@ -45,9 +61,13 @@ export default function routeStack() {
 					name="BurnWorkout"
 					component={BurnWorkout}
 					options={{
-						headerTitle: () => <Header />,
+						title: "Burn Workouts",
 						headerStyle: {
 							backgroundColor: "#4267B2",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "bold",
 						},
 					}}
 				/>

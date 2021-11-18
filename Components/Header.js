@@ -20,7 +20,7 @@ export default function Header({ navigation }) {
 		<View style={{ flexDirection: "row" }}>
 			<View style={{ marginVertical: 20, marginLeft: 20 }}>
 				<Text style={{ fontSize: 25, color: "white", fontWeight: "bold" }}>
-					Sessions
+					Burn Wotkout
 				</Text>
 			</View>
 		</View>
