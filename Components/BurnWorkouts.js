@@ -14,7 +14,7 @@ export default function BurnWorkouts() {
 
 	const getData = async () => {
 		const res = await fetch(
-			"https://run.mocky.io/v3/198cf6d7-5f41-41a3-aac7-6458efaa509c"
+			"https://run.mocky.io/v3/70e7ee71-7e83-447f-b6a2-271fabdb6096"
 		);
 		const answer = await res.json();
 		setData(answer);
