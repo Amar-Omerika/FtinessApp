@@ -25,7 +25,6 @@ export default function BurnWorkouts() {
 
 	return (
 		<View style={styles.container}>
-			<Text style={styles.text}>Basic FlatList Example</Text>
 			<FlatList
 				data={data}
 				keyExtractor={(item) => item._id}
@@ -54,7 +53,6 @@ export default function BurnWorkouts() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		marginTop: 50,
 		marginLeft: 5,
 		marginBottom: 20,
 	},
