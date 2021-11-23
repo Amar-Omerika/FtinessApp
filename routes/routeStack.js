@@ -15,8 +15,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Sessions from "../Screens/Sessions";
 import HomeTabs from "./bottomTabNavigator";
 import BurnWorkout from "../Screens/BurnWorkout";
+import Home from "../Screens/Home";
 import { login } from "../Store/user";
 import { useDispatch } from "react-redux";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 const Stack = createNativeStackNavigator();
 export default function routeStack() {
 	const dispatch = useDispatch();
@@ -34,7 +36,12 @@ export default function routeStack() {
 	}, []);
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName={Landing}>
+			<Stack.Navigator initialRouteName={Home}>
+				<Stack.Screen
+					name="Home"
+					component={Home}
+					options={{ headerShown: false }}
+				/>
 				<Stack.Screen
 					name="HomeTabs"
 					component={HomeTabs}

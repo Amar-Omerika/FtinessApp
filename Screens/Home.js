@@ -9,13 +9,12 @@ import {
 	KeyboardAvoidingView,
 	ScrollView,
 } from "react-native";
-
+import { useSelector } from "react-redux";
+import Landing from "./Landing";
+import Sessions from "./Sessions";
 export default function Home() {
-	return (
-		<View style={styles.container}>
-			<Text>Libary</Text>
-		</View>
-	);
+	const user = useSelector((state) => state.user);
+	return <View>{user ? <Landing /> : <Sessions />}</View>;
 }
 
 const styles = StyleSheet.create({

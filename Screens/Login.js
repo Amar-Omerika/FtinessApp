@@ -9,13 +9,25 @@ import {
 	KeyboardAvoidingView,
 	ScrollView,
 } from "react-native";
+import { useDispatch } from "react-redux";
 import landingImage from "../assets/landingImage.png";
 import mailIcon from "../assets/mailIcon.png";
 import passwordIcon from "../assets/passwordIcon.png";
+import { login } from "../Store/user";
 
 export default function Login({ navigation }) {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const dispatch = useDispatch();
+	const handleLogin = () => {
+		dispatch(
+			login({
+				email,
+				password,
+			})
+		);
+		navigation.navigate("Home");
+	};
 	return (
 		<KeyboardAvoidingView
 			behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -23,19 +35,21 @@ export default function Login({ navigation }) {
 		>
 			<View style={styles.container}>
 				<Image source={landingImage} style={{ height: 250, zIndex: -1 }} />
-				<View style={{ marginLeft: 10 }}>
-					<Text
-						style={{
-							fontSize: 30,
-							zIndex: 1,
-							color: "#4267B2",
-							marginTop: -60,
-							fontWeight: "bold",
-						}}
-					>
-						Login
-					</Text>
-				</View>
+				<TouchableOpacity onPress={() => handleLogin()}>
+					<View style={{ marginLeft: 10 }}>
+						<Text
+							style={{
+								fontSize: 30,
+								zIndex: 1,
+								color: "#4267B2",
+								marginTop: -60,
+								fontWeight: "bold",
+							}}
+						>
+							Login
+						</Text>
+					</View>
+				</TouchableOpacity>
 				<View style={styles.loginContainer}>
 					<View style={{ alignSelf: "center", marginTop: 45 }}>
 						<Text style={{ fontSize: 25, fontWeight: "bold" }}>
