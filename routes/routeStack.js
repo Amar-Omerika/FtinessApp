@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
 	StyleSheet,
 	Text,
@@ -15,9 +15,23 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Sessions from "../Screens/Sessions";
 import HomeTabs from "./bottomTabNavigator";
 import BurnWorkout from "../Screens/BurnWorkout";
-import Header from "../Components/Header";
+import { login } from "../Store/user";
+import { useDispatch } from "react-redux";
 const Stack = createNativeStackNavigator();
 export default function routeStack() {
+	const dispatch = useDispatch();
+	const retrieveData = async () => {
+		const value = await AsyncStorage.getItem("user");
+		if (value) {
+			dispatch(login(JSON.parse(value)));
+		}
+	};
+
+	useEffect(() => {
+		let mounted = true;
+		if (mounted) retrieveData();
+		return () => (mounted = false);
+	}, []);
 	return (
 		<NavigationContainer>
 			<Stack.Navigator initialRouteName={Landing}>
