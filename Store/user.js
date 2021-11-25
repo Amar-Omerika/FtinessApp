@@ -8,34 +8,34 @@ export const userSlice = createSlice({
 	name: "user",
 	initialState,
 	reducers: {
-		login: (state, action) => {
+		loginsucc: (state, action) => {
 			// Redux Toolkit allows us to write "mutating" logic in reducers. It
 			// doesn't actually mutate the state because it uses the Immer library,
 			// which detects changes to a "draft state" and produces a brand new
 			// immutable state based off those changes
 			state.user = action.payload;
 		},
-		logout: (state) => {
+		logoutsucc: (state) => {
 			state.user = null;
 		},
 	},
 });
 
 // Action creators are generated for each case reducer function
-export const { login, logout } = userSlice.actions;
+export const { loginsucc, logoutsucc } = userSlice.actions;
 
 export default userSlice.reducer;
 
-export const Login = (fullUserObj) => async (dispatch) => {
+export const login = (fullUserObj) => async (dispatch) => {
 	try {
-		dispatch(login(fullUserObj));
+		dispatch(loginsucc(fullUserObj));
 	} catch (e) {
 		return console.error(e.message);
 	}
 };
-export const Logout = () => async (dispatch) => {
+export const logout = () => async (dispatch) => {
 	try {
-		dispatch(logout());
+		dispatch(logoutsucc());
 	} catch (e) {
 		return console.error(e.message);
 	}

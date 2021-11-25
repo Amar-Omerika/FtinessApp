@@ -2,8 +2,9 @@ import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import landingImage from "../assets/landingImage.png";
 import logo from "../assets/logo.png";
-
-export default function Landing({ navigation }) {
+import { useNavigation } from "@react-navigation/core";
+export default function Landing() {
+	const navigation = useNavigation();
 	return (
 		<View style={styles.container}>
 			<Image source={landingImage} style={{ height: 250, zIndex: -1 }} />
@@ -56,9 +57,6 @@ export default function Landing({ navigation }) {
 					>
 						Register
 					</Text>
-				</TouchableOpacity>
-				<TouchableOpacity onPress={() => navigation.navigate("Sessions")}>
-					<Text>Sessions</Text>
 				</TouchableOpacity>
 			</View>
 		</View>
