@@ -15,13 +15,20 @@ import mailIcon from "../assets/mailIcon.png";
 import passwordIcon from "../assets/passwordIcon.png";
 import { loginsucc } from "../Store/user";
 import { useNavigation } from "@react-navigation/core";
-
+import Message from "../Components/Message";
 export default function Login() {
 	const navigation = useNavigation();
 	const [email, setEmail] = useState("mojmail@gmail.com");
 	const [password, setPassword] = useState("12341234");
+	const [message, setMessage] = useState(false);
 	const dispatch = useDispatch();
 	const handleLogin = async () => {
+		if (!email || !password) {
+			if (!message) {
+				setMessage("Please check your inputs");
+			}
+			return;
+		}
 		dispatch(
 			loginsucc({
 				email,
@@ -128,6 +135,7 @@ export default function Login() {
 							</Text>
 						</TouchableOpacity>
 					</View>
+					<Message message={message} />
 				</View>
 			</View>
 		</KeyboardAvoidingView>

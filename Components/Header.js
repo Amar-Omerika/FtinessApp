@@ -9,9 +9,6 @@ import {
 	KeyboardAvoidingView,
 	ScrollView,
 } from "react-native";
-import landingImage from "../assets/landingImage.png";
-import mailIcon from "../assets/mailIcon.png";
-import passwordIcon from "../assets/passwordIcon.png";
 
 export default function Header({ navigation }) {
 	const [email, setEmail] = useState("");

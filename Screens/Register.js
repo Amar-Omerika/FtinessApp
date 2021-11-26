@@ -15,12 +15,22 @@ import landingImage from "../assets/landingImage.png";
 import mailIcon from "../assets/mailIcon.png";
 import passwordIcon from "../assets/passwordIcon.png";
 import profileIcon from "../assets/profileIcon.png";
-
+import Message from "../Components/Message";
 export default function Register({ navigation }) {
 	const [email, setEmail] = useState("");
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
+	const [message, setMessage] = useState(false);
 	const SCREEN_HEIGHT = Dimensions.get("screen").height;
+	const handleRegister = async () => {
+		if (!email || !password || !username) {
+			if (!message) {
+				setMessage("Please check your inputs");
+			}
+			return;
+		}
+		navigation.navigate("Login");
+	};
 	return (
 		<KeyboardAwareScrollView style={{ height: SCREEN_HEIGHT }}>
 			<View style={styles.container}>
@@ -131,7 +141,7 @@ export default function Register({ navigation }) {
 							borderRadius: 50,
 							alignSelf: "center",
 						}}
-						onPress={() => navigation.navigate("Login")}
+						onPress={() => handleRegister()}
 					>
 						<Text
 							style={{
@@ -144,7 +154,7 @@ export default function Register({ navigation }) {
 							Sign Up
 						</Text>
 					</TouchableOpacity>
-					<View style={{ alignSelf: "center", marginTop: 20 }}>
+					<View style={{ alignSelf: "center", marginTop: 10 }}>
 						<TouchableOpacity onPress={() => navigation.navigate("Login")}>
 							<Text
 								style={{ color: "#C0C0C0", fontWeight: "bold", fontSize: 15 }}
@@ -153,6 +163,7 @@ export default function Register({ navigation }) {
 							</Text>
 						</TouchableOpacity>
 					</View>
+					<Message message={message} />
 				</View>
 			</View>
 		</KeyboardAwareScrollView>
