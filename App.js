@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import RouteStack from "./routes/routeStack";
-import { store } from "./Store/store";
+import store from "./Store/store";
 import { Provider } from "react-redux";
 
 export default function App() {

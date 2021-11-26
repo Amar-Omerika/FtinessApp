@@ -1,12 +1,11 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createSlice } from "@reduxjs/toolkit";
-
-const initialState = {
-	user: null,
-};
 
 export const userSlice = createSlice({
 	name: "user",
-	initialState,
+	initialState: {
+		user: null,
+	},
 	reducers: {
 		loginsucc: (state, action) => {
 			// Redux Toolkit allows us to write "mutating" logic in reducers. It
@@ -14,9 +13,11 @@ export const userSlice = createSlice({
 			// which detects changes to a "draft state" and produces a brand new
 			// immutable state based off those changes
 			state.user = action.payload;
+			AsyncStorage.setItem("user", JSON.stringify(action.payload));
 		},
 		logoutsucc: (state) => {
 			state.user = null;
+			AsyncStorage.removeItem("user");
 		},
 	},
 });

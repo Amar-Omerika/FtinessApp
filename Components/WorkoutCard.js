@@ -15,8 +15,14 @@ import mema from "../assets/mema.png";
 import weightLifting from "../assets/weightLifting.png";
 import cardio from "../assets/cardioImage.jpg";
 import { useNavigation } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+import { logoutsucc, logout } from "../Store/user";
 
 export default function WorkoutCard() {
+	const dispatch = useDispatch();
+	const handleLogout = () => {
+		dispatch(logout());
+	};
 	const navigation = useNavigation();
 	return (
 		<ScrollView>
@@ -131,6 +137,9 @@ export default function WorkoutCard() {
 						</View>
 					</View>
 				</View>
+				<TouchableOpacity onPress={() => handleLogout()}>
+					<Text>Logout</Text>
+				</TouchableOpacity>
 			</View>
 		</ScrollView>
 	);

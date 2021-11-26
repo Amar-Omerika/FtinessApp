@@ -27,6 +27,7 @@ export default function routeStack() {
 		if (value) {
 			dispatch(login(JSON.parse(value)));
 		}
+		console.log(value);
 	};
 
 	useEffect(() => {
