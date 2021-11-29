@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Text, View, Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Landing from "../Screens/Landing";
+import Home from "../Screens/Home";
 import Libary from "../Screens/Libary";
 import FocusGroups from "../Screens/FocusGroup";
 import Sessions from "../Screens/Sessions";
@@ -43,11 +43,11 @@ function HomeTabs() {
 			}}
 		>
 			<Tab.Screen
-				name="Landing"
-				component={Landing}
+				name="Sessions"
+				component={Sessions}
 				options={{
-					headerShown: false,
 					tabBarShowLabel: false,
+					headerShown: false,
 					tabBarIcon: (focused) => {
 						return (
 							<View
@@ -114,7 +114,7 @@ function HomeTabs() {
 				}}
 			/>
 			<Tab.Screen
-				name="Home"
+				name="Profile"
 				component={Profile}
 				options={{
 					tabBarShowLabel: false,

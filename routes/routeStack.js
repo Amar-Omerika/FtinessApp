@@ -27,7 +27,6 @@ export default function routeStack() {
 		if (value) {
 			dispatch(login(JSON.parse(value)));
 		}
-		console.log(value);
 	};
 
 	useEffect(() => {
@@ -39,13 +38,13 @@ export default function routeStack() {
 		<NavigationContainer>
 			<Stack.Navigator initialRouteName={Home}>
 				<Stack.Screen
-					name="Home"
-					component={Home}
+					name="HomeTabs"
+					component={HomeTabs}
 					options={{ headerShown: false }}
 				/>
 				<Stack.Screen
-					name="HomeTabs"
-					component={HomeTabs}
+					name="Home"
+					component={Home}
 					options={{ headerShown: false }}
 				/>
 				<Stack.Screen

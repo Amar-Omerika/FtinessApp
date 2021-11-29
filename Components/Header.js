@@ -9,15 +9,23 @@ import {
 	KeyboardAvoidingView,
 	ScrollView,
 } from "react-native";
-
-export default function Header({ navigation }) {
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+import mema from "../assets/mema.png";
+export default function Header() {
 	return (
-		<View style={{ flexDirection: "row" }}>
-			<View style={{ marginVertical: 20, marginLeft: 20 }}>
-				<Text style={{ fontSize: 25, color: "white", fontWeight: "bold" }}>
-					Burn Wotkout
+		<View style={{ flexDirection: "row", backgroundColor: "#4267B2" }}>
+			<Image
+				source={mema}
+				style={{
+					height: 70,
+					width: 70,
+					marginTop: 40,
+					marginBottom: 10,
+					marginLeft: 10,
+				}}
+			/>
+			<View style={{ marginTop: 60, marginLeft: 30 }}>
+				<Text style={{ fontSize: 30, color: "white", fontWeight: "bold" }}>
+					Sessions
 				</Text>
 			</View>
 		</View>

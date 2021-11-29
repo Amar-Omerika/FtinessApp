@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 
 import WorkoutCard from "../Components/WorkoutCard";
+import Header from "../Components/Header";
+import { View } from "react-native";
 export default function Sessions() {
-	return <WorkoutCard />;
+	return (
+		<View style={{}}>
+			<Header />
+			<WorkoutCard />
+		</View>
+	);
 }
