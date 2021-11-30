@@ -104,7 +104,11 @@ export default function WorkoutCard() {
 					</View>
 				</View>
 				<View style={{ marginTop: 20 }}>
-					<Image source={cardio} style={styles.image} />
+					<TouchableOpacity
+						onPress={() => navigation.navigate("CardioWorkout")}
+					>
+						<Image source={cardio} style={styles.image} />
+					</TouchableOpacity>
 					<View style={styles.informationContainer}>
 						<View style={{ flexDirection: "row", padding: 10 }}>
 							<Text
