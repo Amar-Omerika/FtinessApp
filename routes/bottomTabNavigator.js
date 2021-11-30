@@ -48,6 +48,8 @@ function HomeTabs() {
 				options={{
 					tabBarShowLabel: false,
 					headerShown: false,
+
+					headerTitle: (props) => <LogoTitle {...props} />,
 					tabBarIcon: (focused) => {
 						return (
 							<View
@@ -70,7 +72,7 @@ function HomeTabs() {
 					tabBarShowLabel: false,
 					headerTitle: (props) => <LogoTitle {...props} />,
 					headerStyle: {
-						backgroundColor: "#4267B2",
+						backgroundColor: "#4880F2",
 						height: 100,
 					},
 					tabBarIcon: (focused) => {
@@ -95,7 +97,7 @@ function HomeTabs() {
 					tabBarShowLabel: false,
 					headerTitle: (props) => <LogoTitle {...props} />,
 					headerStyle: {
-						backgroundColor: "#4267B2",
+						backgroundColor: "#4880F2",
 						height: 100,
 					},
 					tabBarIcon: (focused) => {
@@ -120,7 +122,7 @@ function HomeTabs() {
 					tabBarShowLabel: false,
 					headerTitle: (props) => <LogoTitle {...props} />,
 					headerStyle: {
-						backgroundColor: "#4267B2",
+						backgroundColor: "#4880F2",
 						height: 100,
 					},
 					tabBarIcon: (focused) => {

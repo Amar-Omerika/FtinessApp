@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import {
-	StyleSheet,
-	Text,
-	View,
-	Image,
-	TouchableOpacity,
-	TextInput,
-	KeyboardAvoidingView,
-	ScrollView,
-} from "react-native";
+import { StyleSheet } from "react-native";
 import BurnWorkouts from "../Components/BurnWorkouts";
 export default function BurnWorkout() {
 	return <BurnWorkouts />;

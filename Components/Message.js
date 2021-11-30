@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-	StyleSheet,
-	Text,
-	View,
-	Image,
-	TouchableOpacity,
-	TextInput,
-} from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Message({ message }) {
 	return (

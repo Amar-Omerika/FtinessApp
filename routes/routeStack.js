@@ -1,12 +1,4 @@
 import React, { useEffect } from "react";
-import {
-	StyleSheet,
-	Text,
-	View,
-	Image,
-	TouchableOpacity,
-	Button,
-} from "react-native";
 import Landing from "../Screens/Landing";
 import Login from "../Screens/Login";
 import Register from "../Screens/Register";
@@ -15,7 +7,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Sessions from "../Screens/Sessions";
 import HomeTabs from "./bottomTabNavigator";
 import BurnWorkout from "../Screens/BurnWorkout";
-import WeightLifting from "../Components/WeightLifting";
+import WeightLifting from "../Screens/WeightLifting";
+import CardioWorkout from "../Screens/CardioWorkout";
 import Home from "../Screens/Home";
 import { login } from "../Store/user";
 import { useDispatch } from "react-redux";
@@ -84,6 +77,20 @@ export default function routeStack() {
 					component={WeightLifting}
 					options={{
 						title: "WeightLifting Workouts",
+						headerStyle: {
+							backgroundColor: "#4267B2",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "bold",
+						},
+					}}
+				/>
+				<Stack.Screen
+					name="CardioWorkout"
+					component={CardioWorkout}
+					options={{
+						title: "Cardio Workouts",
 						headerStyle: {
 							backgroundColor: "#4267B2",
 						},

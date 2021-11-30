@@ -5,7 +5,6 @@ import {
 	View,
 	Image,
 	TouchableOpacity,
-	TextInput,
 	FlatList,
 } from "react-native";
 import { Linking } from "react-native";

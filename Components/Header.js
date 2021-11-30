@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import {
-	StyleSheet,
-	Text,
-	View,
-	Image,
-	TouchableOpacity,
-	TextInput,
-	KeyboardAvoidingView,
-	ScrollView,
-} from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import mema from "../assets/mema.png";
 export default function Header() {
 	return (
-		<View style={{ flexDirection: "row", backgroundColor: "#4267B2" }}>
+		<View
+			style={{ flexDirection: "row", backgroundColor: "#4880F2", height: 40 }}
+		>
 			<Image
 				source={mema}
 				style={{

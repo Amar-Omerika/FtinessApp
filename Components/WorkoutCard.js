@@ -5,8 +5,6 @@ import {
 	View,
 	Image,
 	TouchableOpacity,
-	TextInput,
-	KeyboardAvoidingView,
 	ScrollView,
 } from "react-native";
 import BurnWotkoutImage from "../assets/BurnWorkoutImg.png";
