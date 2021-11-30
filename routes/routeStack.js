@@ -15,6 +15,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Sessions from "../Screens/Sessions";
 import HomeTabs from "./bottomTabNavigator";
 import BurnWorkout from "../Screens/BurnWorkout";
+import WeightLifting from "../Components/WeightLifting";
 import Home from "../Screens/Home";
 import { login } from "../Store/user";
 import { useDispatch } from "react-redux";
@@ -77,6 +78,20 @@ export default function routeStack() {
 					name="Register"
 					component={Register}
 					options={{ headerShown: false }}
+				/>
+				<Stack.Screen
+					name="WeightLifting"
+					component={WeightLifting}
+					options={{
+						title: "WeightLifting Workouts",
+						headerStyle: {
+							backgroundColor: "#4267B2",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "bold",
+						},
+					}}
 				/>
 				<Stack.Screen
 					name="BurnWorkout"

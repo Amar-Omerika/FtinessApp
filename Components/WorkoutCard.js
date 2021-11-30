@@ -66,7 +66,11 @@ export default function WorkoutCard() {
 					</View>
 				</View>
 				<View style={{ marginTop: 20 }}>
-					<Image source={weightLifting} style={styles.image} />
+					<TouchableOpacity
+						onPress={() => navigation.navigate("WeightLifting")}
+					>
+						<Image source={weightLifting} style={styles.image} />
+					</TouchableOpacity>
 					<View style={styles.informationContainer}>
 						<View style={{ flexDirection: "row", padding: 10 }}>
 							<Text
