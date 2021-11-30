@@ -11,18 +11,17 @@ import {
 import { Linking } from "react-native";
 export default function CardioWorkout() {
 	const [data, setData] = useState([]);
-
 	const getData = async () => {
 		const res = await fetch(
-			"https://run.mocky.io/v3/70e7ee71-7e83-447f-b6a2-271fabdb6096"
+			"https://run.mocky.io/v3/334fdb68-b801-4f85-a13c-bbedae37c940"
 		);
 		const answer = await res.json();
 		setData(answer);
 	};
+
 	useEffect(() => {
 		getData();
 	}, []);
-
 	return (
 		<View style={styles.container}>
 			<FlatList

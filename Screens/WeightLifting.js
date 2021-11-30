@@ -21,7 +21,7 @@ export default function WeightLifting() {
 
 	useEffect(() => {
 		getData();
-	});
+	}, []);
 
 	return (
 		<View style={styles.container}>

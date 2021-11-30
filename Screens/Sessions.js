@@ -5,7 +5,7 @@ import Header from "../Components/Header";
 import { View } from "react-native";
 export default function Sessions() {
 	return (
-		<View style={{ marginBottom: 110 }}>
+		<View style={{ marginBottom: 100 }}>
 			<Header />
 			<WorkoutCard />
 		</View>
