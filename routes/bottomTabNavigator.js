@@ -66,11 +66,11 @@ function HomeTabs() {
 				}}
 			/>
 			<Tab.Screen
-				name="FocusGroups"
+				name="Focus Groups"
 				component={FocusGroups}
 				options={{
 					tabBarShowLabel: false,
-					headerTitle: (props) => <LogoTitle {...props} />,
+					headerTintColor: "#fff",
 					headerStyle: {
 						backgroundColor: "#4880F2",
 						height: 100,
@@ -95,7 +95,8 @@ function HomeTabs() {
 				component={Libary}
 				options={{
 					tabBarShowLabel: false,
-					headerTitle: (props) => <LogoTitle {...props} />,
+					headerTintColor: "#fff",
+
 					headerStyle: {
 						backgroundColor: "#4880F2",
 						height: 100,
@@ -120,7 +121,7 @@ function HomeTabs() {
 				component={Profile}
 				options={{
 					tabBarShowLabel: false,
-					headerTitle: (props) => <LogoTitle {...props} />,
+					headerTintColor: "#fff",
 					headerStyle: {
 						backgroundColor: "#4880F2",
 						height: 100,
