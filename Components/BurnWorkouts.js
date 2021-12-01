@@ -27,7 +27,7 @@ export default function BurnWorkouts() {
 		<View style={styles.container}>
 			<FlatList
 				data={data}
-				keyExtractor={(item) => item._id}
+				keyExtractor={(item) => item.id}
 				renderItem={({ item }) => (
 					<TouchableOpacity onPress={() => Linking.openURL(item.link)}>
 						<View style={{ flexDirection: "row", marginTop: 10 }}>
