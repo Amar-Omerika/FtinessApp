@@ -1,21 +1,8 @@
 import React, { useState } from "react";
-import {
-	StyleSheet,
-	Text,
-	View,
-	Image,
-	TouchableOpacity,
-	TextInput,
-	KeyboardAvoidingView,
-	ScrollView,
-} from "react-native";
-
+import { StyleSheet, Text, View } from "react-native";
+import Exercises from "../Components/Exercises";
 export default function Libary() {
-	return (
-		<View style={styles.container}>
-			<Text>Libary</Text>
-		</View>
-	);
+	return <Exercises />;
 }
 
 const styles = StyleSheet.create({
