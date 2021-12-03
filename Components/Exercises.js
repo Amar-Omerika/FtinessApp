@@ -7,18 +7,22 @@ import {
 	TouchableOpacity,
 	TextInput,
 	FlatList,
+	SafeAreaView,
 } from "react-native";
 import { Linking } from "react-native";
 
 export default function Exercises() {
-	const [data, setData] = useState([]);
+	const [filteredData, setFilteredData] = useState([]);
+	const [masterData, setMasterData] = useState([]);
+	const [search, setSearch] = useState("");
 
 	const getData = async () => {
 		const res = await fetch(
 			"https://run.mocky.io/v3/f685415c-b032-4829-848a-dcb2dd15ca91"
 		);
 		const answer = await res.json();
-		setData(answer);
+		setFilteredData(answer);
+		setMasterData(answer);
 	};
 	useEffect(() => {
 		getData();
@@ -37,39 +41,59 @@ export default function Exercises() {
 						/>
 					</View>
 					<View style={styles.description}>
-						<Text style={styles.descriptionText}>{item.title}</Text>
+						<Text style={styles.descriptionText}>
+							{item.title.toUpperCase()}
+						</Text>
 					</View>
 				</View>
 			</TouchableOpacity>
 		);
 	};
-	const renderHeader = () => {
-		return (
-			<View
-				style={{
-					backgroundColor: "#fff",
-					padding: 10,
-					marginVertical: 10,
-					borderRadius: 20,
-				}}
-			>
-				<TextInput
-					autoCapitalize="none"
-					autoCorrect={false}
-					clearButtonMode="always"
-					placeholder="Search"
-					style={{ backgroundColor: "#fff", paddingHorizontal: 20 }}
-				/>
-			</View>
-		);
+	const searchFilter = (text) => {
+		if (text) {
+			const newData = masterData.filter((item) => {
+				const itemData = item.title
+					? item.title.toUpperCase()
+					: "".toUpperCase();
+
+				const textData = text.toString().toUpperCase();
+				return itemData.indexOf(textData) > -1;
+			});
+			setFilteredData(newData);
+			setSearch(text);
+		} else {
+			setFilteredData(masterData);
+			setSearch(text);
+		}
 	};
 	return (
-		<FlatList
-			data={data}
-			ListHeaderComponent={renderHeader}
-			renderItem={renderItem}
-			keyExtractor={(item) => item._id}
-		/>
+		<SafeAreaView style={{ flex: 1 }}>
+			<View>
+				<View
+					style={{
+						backgroundColor: "#fff",
+						padding: 10,
+						marginVertical: 10,
+						borderRadius: 20,
+					}}
+				>
+					<TextInput
+						autoCapitalize="none"
+						autoCorrect={false}
+						clearButtonMode="always"
+						placeholder="Search"
+						onChangeText={(e) => searchFilter(e)}
+						value={search}
+						style={{ backgroundColor: "#fff", paddingHorizontal: 20 }}
+					/>
+				</View>
+				<FlatList
+					data={filteredData}
+					renderItem={renderItem}
+					keyExtractor={(item, index) => index.toString()}
+				/>
+			</View>
+		</SafeAreaView>
 	);
 }
 
@@ -98,5 +122,6 @@ const styles = StyleSheet.create({
 		marginRight: 4,
 		marginTop: 3,
 		fontWeight: "bold",
+		textTransform: "uppercase",
 	},
 });
