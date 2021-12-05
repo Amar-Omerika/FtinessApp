@@ -31,7 +31,7 @@ export default function Exercises() {
 	const renderItem = ({ item }) => {
 		return (
 			<TouchableOpacity onPress={() => Linking.openURL(item.link)}>
-				<View style={{ flexDirection: "row", marginTop: 10 }}>
+				<View style={{ flexDirection: "row", marginTop: 10, marginRight: 5 }}>
 					<View>
 						<Image
 							source={{
@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
 		width: 133,
 		height: 83,
 		borderRadius: 10,
+		marginLeft: 5,
 	},
 	description: {
 		backgroundColor: "#E7E1E1",

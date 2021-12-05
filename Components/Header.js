@@ -4,19 +4,19 @@ import mema from "../assets/mema.png";
 export default function Header() {
 	return (
 		<View
-			style={{ flexDirection: "row", backgroundColor: "#4880F2", height: 100 }}
+			style={{ flexDirection: "row", backgroundColor: "#4880F2", height: 80 }}
 		>
 			<Image
 				source={mema}
 				style={{
-					height: 60,
-					width: 60,
+					height: 40,
+					width: 40,
 					marginTop: 30,
 					marginLeft: 16,
 				}}
 			/>
-			<View style={{ marginLeft: 20, marginTop: 50 }}>
-				<Text style={{ fontSize: 25, color: "white", fontWeight: "bold" }}>
+			<View style={{ marginLeft: 20, marginTop: 40 }}>
+				<Text style={{ fontSize: 20, color: "white", fontWeight: "bold" }}>
 					Sessions
 				</Text>
 			</View>

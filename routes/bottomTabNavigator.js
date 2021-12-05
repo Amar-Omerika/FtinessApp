@@ -73,7 +73,7 @@ function HomeTabs() {
 					headerTintColor: "#fff",
 					headerStyle: {
 						backgroundColor: "#4880F2",
-						height: 100,
+						height: 80,
 					},
 					tabBarIcon: (focused) => {
 						return (
@@ -99,7 +99,7 @@ function HomeTabs() {
 
 					headerStyle: {
 						backgroundColor: "#4880F2",
-						height: 100,
+						height: 80,
 					},
 					tabBarIcon: (focused) => {
 						return (
@@ -124,7 +124,7 @@ function HomeTabs() {
 					headerTintColor: "#fff",
 					headerStyle: {
 						backgroundColor: "#4880F2",
-						height: 100,
+						height: 80,
 					},
 					tabBarIcon: (focused) => {
 						return (
@@ -144,11 +144,5 @@ function HomeTabs() {
 		</Tab.Navigator>
 	);
 }
-const TempScreen = () => {
-	return (
-		<View>
-			<Text></Text>
-		</View>
-	);
-};
+
 export default HomeTabs;
