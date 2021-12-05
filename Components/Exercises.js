@@ -18,7 +18,7 @@ export default function Exercises() {
 
 	const getData = async () => {
 		const res = await fetch(
-			"https://run.mocky.io/v3/f685415c-b032-4829-848a-dcb2dd15ca91"
+			"https://run.mocky.io/v3/f8fc6c2e-69d8-460e-9ff2-f6699b9da37c"
 		);
 		const answer = await res.json();
 		setFilteredData(answer);
@@ -68,31 +68,29 @@ export default function Exercises() {
 	};
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
-			<View>
-				<View
-					style={{
-						backgroundColor: "#fff",
-						padding: 10,
-						marginVertical: 10,
-						borderRadius: 20,
-					}}
-				>
-					<TextInput
-						autoCapitalize="none"
-						autoCorrect={false}
-						clearButtonMode="always"
-						placeholder="Search"
-						onChangeText={(e) => searchFilter(e)}
-						value={search}
-						style={{ backgroundColor: "#fff", paddingHorizontal: 20 }}
-					/>
-				</View>
-				<FlatList
-					data={filteredData}
-					renderItem={renderItem}
-					keyExtractor={(item, index) => index.toString()}
+			<View
+				style={{
+					backgroundColor: "#fff",
+					padding: 10,
+					marginVertical: 10,
+					borderRadius: 20,
+				}}
+			>
+				<TextInput
+					autoCapitalize="none"
+					autoCorrect={false}
+					clearButtonMode="always"
+					placeholder="Search"
+					onChangeText={(e) => searchFilter(e)}
+					value={search}
+					style={{ backgroundColor: "#fff", paddingHorizontal: 20 }}
 				/>
 			</View>
+			<FlatList
+				data={filteredData}
+				renderItem={renderItem}
+				keyExtractor={(item, index) => index.toString()}
+			/>
 		</SafeAreaView>
 	);
 }
