@@ -36,7 +36,7 @@ export default function FocusGroups() {
 	return (
 		<View style={styles.container}>
 			<StatusBar style="light" />
-			<SafeAreaView style={{ flex: 1 }}>
+			<SafeAreaView style={{ flex: 1, marginBottom: 10 }}>
 				<SectionList
 					contentContainerStyle={{ paddingHorizontal: 10 }}
 					stickySectionHeadersEnabled={false}

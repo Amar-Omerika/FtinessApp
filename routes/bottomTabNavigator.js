@@ -43,6 +43,7 @@ function HomeTabs() {
 					height: 50,
 					backgroundColor: "#121212",
 					borderTopColor: "#121212",
+					alignItems: "center",
 				},
 			}}
 		>
@@ -52,6 +53,11 @@ function HomeTabs() {
 				options={{
 					tabBarShowLabel: false,
 					headerShown: false,
+					tabBarStyle: {
+						height: 50,
+						backgroundColor: "#121212",
+						borderTopColor: "#121212",
+					},
 
 					headerTitle: (props) => <LogoTitle {...props} />,
 					tabBarIcon: (focused) => {
@@ -75,7 +81,7 @@ function HomeTabs() {
 					tabBarShowLabel: false,
 					headerTintColor: "#fff",
 					headerStyle: {
-						backgroundColor: "#4880F2",
+						backgroundColor: "#7c0000",
 						height: 80,
 					},
 					tabBarIcon: (focused) => {

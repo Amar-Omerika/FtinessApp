@@ -24,7 +24,7 @@ export default function WorkoutCard() {
 	};
 	const navigation = useNavigation();
 	return (
-		<ScrollView>
+		<ScrollView style={{ marginBottom: 90 }}>
 			<View style={styles.container}>
 				<View style={{ marginTop: 20 }}>
 					<TouchableOpacity onPress={() => navigation.navigate("BurnWorkout")}>

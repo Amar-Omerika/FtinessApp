@@ -6,7 +6,7 @@ import { View } from "react-native";
 
 export default function Sessions() {
 	return (
-		<View style={{ backgroundColor: "#121212", paddingBottom: 100 }}>
+		<View style={{ backgroundColor: "#121212" }}>
 			<Header />
 			<WorkoutCard />
 		</View>
