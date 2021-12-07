@@ -42,7 +42,7 @@ export default function WorkoutCard() {
 							</Text>
 							<View
 								style={{
-									backgroundColor: "#7c0000",
+									backgroundColor: "#3e0000",
 									width: 80,
 									borderRadius: 10,
 									flexDirection: "row",
@@ -82,7 +82,7 @@ export default function WorkoutCard() {
 							</Text>
 							<View
 								style={{
-									backgroundColor: "#7c0000",
+									backgroundColor: "#3e0000",
 									width: 80,
 									borderRadius: 10,
 									flexDirection: "row",
@@ -122,11 +122,11 @@ export default function WorkoutCard() {
 							</Text>
 							<View
 								style={{
-									backgroundColor: "#7c0000",
+									backgroundColor: "#3e0000",
 									width: 80,
 									borderRadius: 10,
 									flexDirection: "row",
-									marginLeft: 100,
+									marginLeft: 80,
 								}}
 							>
 								<Text style={styles.rating}>4.9</Text>
