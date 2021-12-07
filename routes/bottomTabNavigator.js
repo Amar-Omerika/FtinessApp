@@ -39,7 +39,11 @@ function HomeTabs() {
 	return (
 		<Tab.Navigator
 			screenOptions={{
-				tabBarStyle: { height: 50 },
+				tabBarStyle: {
+					height: 50,
+					backgroundColor: "#121212",
+					borderTopColor: "#121212",
+				},
 			}}
 		>
 			<Tab.Screen
@@ -56,7 +60,6 @@ function HomeTabs() {
 								style={{
 									height: 50,
 									width: 50,
-									marginTop: 10,
 								}}
 							>
 								<Image source={homeIcon} style={{ height: 35, width: 35 }} />
@@ -81,7 +84,6 @@ function HomeTabs() {
 								style={{
 									height: 50,
 									width: 50,
-									marginTop: 17,
 								}}
 							>
 								<Image source={focusIcon} style={{ height: 30, width: 30 }} />
@@ -107,7 +109,6 @@ function HomeTabs() {
 								style={{
 									height: 50,
 									width: 50,
-									marginTop: 17,
 								}}
 							>
 								<Image source={libaryIcon} style={{ height: 30, width: 30 }} />
@@ -132,7 +133,6 @@ function HomeTabs() {
 								style={{
 									height: 40,
 									width: 40,
-									marginTop: 10,
 								}}
 							>
 								<Image source={profileIcon} style={{ height: 30, width: 30 }} />

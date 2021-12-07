@@ -4,7 +4,7 @@ import mema from "../assets/mema.png";
 export default function Header() {
 	return (
 		<View
-			style={{ flexDirection: "row", backgroundColor: "#4880F2", height: 80 }}
+			style={{ flexDirection: "row", backgroundColor: "#ba0000", height: 80 }}
 		>
 			<Image
 				source={mema}

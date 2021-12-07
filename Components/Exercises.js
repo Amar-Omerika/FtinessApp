@@ -69,12 +69,16 @@ export default function Exercises() {
 		}
 	};
 	return (
-		<SafeAreaView style={{ flex: 1 }}>
+		<SafeAreaView
+			style={{ flex: 1, paddingBottom: 10, backgroundColor: "#121212" }}
+		>
 			<View
 				style={{
 					backgroundColor: "#fff",
 					padding: 10,
 					marginVertical: 10,
+					marginRight: 10,
+					marginLeft: 10,
 					borderRadius: 20,
 				}}
 			>

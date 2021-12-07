@@ -6,6 +6,7 @@ import {
 	Image,
 	TouchableOpacity,
 	ScrollView,
+	ImageBackground,
 } from "react-native";
 import BurnWotkoutImage from "../assets/BurnWorkoutImg.png";
 import star from "../assets/star.png";
@@ -15,7 +16,7 @@ import cardio from "../assets/cardioImage.jpg";
 import { useNavigation } from "@react-navigation/native";
 import { useDispatch } from "react-redux";
 import { logoutsucc, logout } from "../Store/user";
-
+import pozadina from "../assets/pozadina.jpg";
 export default function WorkoutCard() {
 	const dispatch = useDispatch();
 	const handleLogout = () => {
@@ -41,7 +42,7 @@ export default function WorkoutCard() {
 							</Text>
 							<View
 								style={{
-									backgroundColor: "#4267B2",
+									backgroundColor: "#7c0000",
 									width: 80,
 									borderRadius: 10,
 									flexDirection: "row",
@@ -81,7 +82,7 @@ export default function WorkoutCard() {
 							</Text>
 							<View
 								style={{
-									backgroundColor: "#4267B2",
+									backgroundColor: "#7c0000",
 									width: 80,
 									borderRadius: 10,
 									flexDirection: "row",
@@ -121,7 +122,7 @@ export default function WorkoutCard() {
 							</Text>
 							<View
 								style={{
-									backgroundColor: "#4267B2",
+									backgroundColor: "#7c0000",
 									width: 80,
 									borderRadius: 10,
 									flexDirection: "row",

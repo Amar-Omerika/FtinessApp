@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import {
-	StyleSheet,
-	Text,
-	View,
-	Image,
-	TouchableOpacity,
-	TextInput,
-	KeyboardAvoidingView,
-	ScrollView,
-} from "react-native";
+import { StyleSheet, View } from "react-native";
 import { useSelector } from "react-redux";
 import Landing from "./Landing";
 import Sessions from "./Sessions";
