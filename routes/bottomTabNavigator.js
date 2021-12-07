@@ -10,7 +10,7 @@ import profile from "../assets/mema.png";
 import homeIcon from "../assets/homeIcon.png";
 import libaryIcon from "../assets/libaryIcon.png";
 import focusIcon from "../assets/focusIcon.png";
-import profileIcon from "../assets/profileIcon2.png";
+import profileIcon from "../assets/profileIcon.png";
 
 const Tab = createBottomTabNavigator();
 function LogoTitle() {
@@ -39,7 +39,7 @@ function HomeTabs() {
 	return (
 		<Tab.Navigator
 			screenOptions={{
-				tabBarStyle: { height: 60 },
+				tabBarStyle: { height: 50 },
 			}}
 		>
 			<Tab.Screen
@@ -81,10 +81,10 @@ function HomeTabs() {
 								style={{
 									height: 50,
 									width: 50,
-									marginTop: 10,
+									marginTop: 17,
 								}}
 							>
-								<Image source={focusIcon} style={{ height: 35, width: 35 }} />
+								<Image source={focusIcon} style={{ height: 30, width: 30 }} />
 							</View>
 						);
 					},
@@ -107,10 +107,10 @@ function HomeTabs() {
 								style={{
 									height: 50,
 									width: 50,
-									marginTop: 10,
+									marginTop: 17,
 								}}
 							>
-								<Image source={libaryIcon} style={{ height: 35, width: 35 }} />
+								<Image source={libaryIcon} style={{ height: 30, width: 30 }} />
 							</View>
 						);
 					},
@@ -130,12 +130,12 @@ function HomeTabs() {
 						return (
 							<View
 								style={{
-									height: 50,
-									width: 50,
+									height: 40,
+									width: 40,
 									marginTop: 10,
 								}}
 							>
-								<Image source={profileIcon} style={{ height: 35, width: 35 }} />
+								<Image source={profileIcon} style={{ height: 30, width: 30 }} />
 							</View>
 						);
 					},

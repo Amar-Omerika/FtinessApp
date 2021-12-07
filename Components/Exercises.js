@@ -30,23 +30,25 @@ export default function Exercises() {
 
 	const renderItem = ({ item }) => {
 		return (
-			<TouchableOpacity onPress={() => Linking.openURL(item.link)}>
-				<View style={{ flexDirection: "row", marginTop: 10, marginRight: 5 }}>
-					<View>
-						<Image
-							source={{
-								uri: item.image,
-							}}
-							style={styles.img}
-						/>
+			<View>
+				<TouchableOpacity onPress={() => Linking.openURL(item.link)}>
+					<View style={{ flexDirection: "row", marginTop: 10, marginRight: 5 }}>
+						<View>
+							<Image
+								source={{
+									uri: item.image,
+								}}
+								style={styles.img}
+							/>
+						</View>
+						<View style={styles.description}>
+							<Text style={styles.descriptionText}>
+								{item.title.toUpperCase()}
+							</Text>
+						</View>
 					</View>
-					<View style={styles.description}>
-						<Text style={styles.descriptionText}>
-							{item.title.toUpperCase()}
-						</Text>
-					</View>
-				</View>
-			</TouchableOpacity>
+				</TouchableOpacity>
+			</View>
 		);
 	};
 	const searchFilter = (text) => {
