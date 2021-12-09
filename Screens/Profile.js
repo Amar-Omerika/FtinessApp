@@ -13,14 +13,16 @@ import {
 export default function Profile() {
 	return (
 		<View style={styles.container}>
-			<Text>Profile</Text>
+			<View>
+				<Text>Profile</Text>
+			</View>
 		</View>
 	);
 }
 
 const styles = StyleSheet.create({
 	container: {
-		alignSelf: "center",
-		marginTop: 50,
+		flex: 1,
+		backgroundColor: "#121212",
 	},
 });

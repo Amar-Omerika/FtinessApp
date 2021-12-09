@@ -106,7 +106,7 @@ function HomeTabs() {
 					headerTintColor: "#fff",
 
 					headerStyle: {
-						backgroundColor: "#4880F2",
+						backgroundColor: "#7c0000",
 						height: 80,
 					},
 					tabBarIcon: (focused) => {
@@ -130,7 +130,7 @@ function HomeTabs() {
 					tabBarShowLabel: false,
 					headerTintColor: "#fff",
 					headerStyle: {
-						backgroundColor: "#4880F2",
+						backgroundColor: "#7c0000",
 						height: 80,
 					},
 					tabBarIcon: (focused) => {

@@ -120,6 +120,7 @@ export default function routeStack() {
 						},
 					}}
 				/>
+
 				<Stack.Screen
 					name="Arms"
 					component={Arms}
