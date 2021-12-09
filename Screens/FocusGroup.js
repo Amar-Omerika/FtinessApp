@@ -11,8 +11,12 @@ import {
 	TouchableOpacity,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Linking } from "react-native";
-import FullBody from "./FullBody";
+import Arms from "./Arms";
+import Chest from "./Chest";
+import Abs from "./Abs";
+import Legs from "./Legs";
+import Back from "./Back";
+import Shoulder from "./Shoulder";
 
 export default function FocusGroups() {
 	const navigation = useNavigation();
@@ -68,96 +72,54 @@ const SECTIONS = [
 		data: [
 			{
 				key: "1",
-				text: "Item text 1",
-				uri: "https://picsum.photos/id/1/200",
-				screen: FullBody,
+				text: "Arms Workouts",
+				uri: "https://i.pinimg.com/564x/70/7e/12/707e12b584c9715e6c48846d636edcb1.jpg",
+				screen: Arms,
 			},
 			{
 				key: "2",
-				text: "Item text 2",
-				uri: "https://picsum.photos/id/10/200",
-			},
-
-			{
-				key: "3",
-				text: "Item text 3",
-				uri: "https://picsum.photos/id/1002/200",
-			},
-			{
-				key: "4",
-				text: "Item text 4",
-				uri: "https://picsum.photos/id/1006/200",
-			},
-			{
-				key: "5",
-				text: "Item text 5",
-				uri: "https://picsum.photos/id/1008/200",
+				text: "Chest Workouts",
+				uri: "https://i.pinimg.com/564x/2f/bb/47/2fbb477973d6562882381a3fa59d81ce.jpg",
+				screen: Chest,
 			},
 		],
 	},
 	{
-		title: "Punk and hardcore",
+		title: "The most performed",
 		data: [
 			{
 				key: "1",
-				text: "Item text 1",
-				uri: "https://picsum.photos/id/1011/200",
+				text: "Abs Workouts",
+				uri: "https://i.pinimg.com/564x/11/16/fa/1116fa3c662309c5020cdb7e580923a9.jpg",
+				screen: Abs,
 			},
 			{
 				key: "2",
-				text: "Item text 2",
-				uri: "https://picsum.photos/id/1012/200",
-			},
-
-			{
-				key: "3",
-				text: "Item text 3",
-				uri: "https://picsum.photos/id/1013/200",
-			},
-			{
-				key: "4",
-				text: "Item text 4",
-				uri: "https://picsum.photos/id/1015/200",
-			},
-			{
-				key: "5",
-				text: "Item text 5",
-				uri: "https://picsum.photos/id/1016/200",
+				text: "Legs Workouts",
+				uri: "https://i.pinimg.com/564x/41/05/f9/4105f9b6e29927159d78062b1a810194.jpg",
+				screen: Legs,
 			},
 		],
 	},
 	{
-		title: "Based on your recent listening",
+		title: "Others",
 		data: [
 			{
 				key: "1",
-				text: "Item text 1",
-				uri: "https://picsum.photos/id/1020/200",
+				text: "Back Workouts",
+				uri: "https://i.pinimg.com/564x/cb/db/0c/cbdb0cbfe52f8ce664cb3013005c9fcb.jpg",
+				screen: Back,
 			},
 			{
 				key: "2",
-				text: "Item text 2",
-				uri: "https://picsum.photos/id/1024/200",
-			},
-
-			{
-				key: "3",
-				text: "Item text 3",
-				uri: "https://picsum.photos/id/1027/200",
-			},
-			{
-				key: "4",
-				text: "Item text 4",
-				uri: "https://picsum.photos/id/1035/200",
-			},
-			{
-				key: "5",
-				text: "Item text 5",
-				uri: "https://picsum.photos/id/1038/200",
+				text: "Shoulder Workouts",
+				uri: "https://i.pinimg.com/564x/8a/74/a9/8a74a94b5130c8a726e774984ff2395e.jpg",
+				screen: Shoulder,
 			},
 		],
 	},
 ];
+
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,

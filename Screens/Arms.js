@@ -10,10 +10,10 @@ import {
 	ScrollView,
 } from "react-native";
 
-export default function FullBody() {
+export default function Arms() {
 	return (
 		<View style={styles.container}>
-			<Text>fullbody</Text>
+			<Text>Arms</Text>
 		</View>
 	);
 }
