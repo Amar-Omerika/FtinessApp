@@ -35,6 +35,7 @@ export default function Login() {
 				password,
 			})
 		);
+
 		navigation.navigate("Home");
 	};
 	return (

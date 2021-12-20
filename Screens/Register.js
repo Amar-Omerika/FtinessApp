@@ -14,7 +14,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import landingImage from "../assets/landingImage.png";
 import mailIcon from "../assets/mailIcon.png";
 import passwordIcon from "../assets/passwordIcon.png";
-import profileIcon from "../assets/profileIcon.png";
+import profileIcon from "../assets/person.png";
 import Message from "../Components/Message";
 export default function Register({ navigation }) {
 	const [email, setEmail] = useState("");
@@ -65,7 +65,7 @@ export default function Register({ navigation }) {
 						>
 							<Image
 								source={profileIcon}
-								style={{ marginTop: 10, marginLeft: 10, marginRight: 10 }}
+								style={{ marginTop: 10, marginLeft: 5, marginRight: 10 }}
 							/>
 							<TextInput
 								style={{

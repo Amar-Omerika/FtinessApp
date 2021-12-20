@@ -24,7 +24,7 @@ export const userSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { loginsucc, logoutsucc } = userSlice.actions;
-
+export const userSelector = (state) => state.user;
 export default userSlice.reducer;
 
 export const login = (fullUserObj) => async (dispatch) => {

@@ -24,6 +24,7 @@ export default function routeStack() {
 	const dispatch = useDispatch();
 	const retrieveData = async () => {
 		const value = await AsyncStorage.getItem("user");
+		console.log(value);
 		if (value) {
 			dispatch(login(JSON.parse(value)));
 		}
