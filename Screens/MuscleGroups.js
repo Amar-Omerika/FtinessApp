@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import SECTIONS from "../Components/focusGroupFetch";
-export default function FocusGroups() {
+export default function MuscleGroups() {
 	const navigation = useNavigation();
 	const ListItem = ({ item }) => {
 		return (

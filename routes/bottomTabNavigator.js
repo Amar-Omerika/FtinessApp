@@ -3,7 +3,7 @@ import { Text, View, Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../Screens/Home";
 import Libary from "../Screens/Libary";
-import FocusGroups from "../Screens/FocusGroup";
+import MuscleGroups from "../Screens/MuscleGroups";
 import Sessions from "../Screens/Sessions";
 import Profile from "../Screens/Profile";
 import profile from "../assets/mema.png";
@@ -48,18 +48,22 @@ function HomeTabs() {
 			}}
 		>
 			<Tab.Screen
-				name="Sessions"
-				component={Sessions}
+				name="Home"
+				component={Home}
 				options={{
 					tabBarShowLabel: false,
 					headerShown: false,
+					headerTintColor: "#fff",
 					tabBarStyle: {
-						height: 50,
 						backgroundColor: "#121212",
+						paddingTop: 10,
+						height: 60,
 						borderTopColor: "#121212",
 					},
-
-					headerTitle: (props) => <LogoTitle {...props} />,
+					headerStyle: {
+						backgroundColor: "#7c0000",
+						height: 80,
+					},
 					tabBarIcon: (focused) => {
 						return (
 							<View
@@ -68,15 +72,16 @@ function HomeTabs() {
 									width: 50,
 								}}
 							>
-								<Image source={homeIcon} style={{ height: 35, width: 35 }} />
+								<Image source={homeIcon} style={{ height: 30, width: 30 }} />
 							</View>
 						);
 					},
 				}}
 			/>
+
 			<Tab.Screen
-				name="Focus Groups"
-				component={FocusGroups}
+				name="Muscle Groups"
+				component={MuscleGroups}
 				options={{
 					tabBarShowLabel: false,
 					headerTintColor: "#fff",

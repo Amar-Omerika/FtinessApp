@@ -104,7 +104,7 @@ export default function WorkoutCard() {
 					>
 						<Image source={cardio} style={styles.image} />
 					</TouchableOpacity>
-					<View style={styles.informationContainer}>
+					<View style={styles.informationContainer1}>
 						<View style={{ flexDirection: "row", padding: 10 }}>
 							<Text
 								style={{
@@ -162,6 +162,16 @@ const styles = StyleSheet.create({
 		borderRadius: 10,
 		width: 300,
 		alignSelf: "center",
+	},
+	informationContainer1: {
+		backgroundColor: "#F4EFEF",
+		width: 344,
+		height: 100,
+		marginTop: -40,
+		borderRadius: 10,
+		width: 300,
+		alignSelf: "center",
+		marginBottom: 85,
 	},
 	rating: {
 		color: "white",

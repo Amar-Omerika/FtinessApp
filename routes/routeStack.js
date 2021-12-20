@@ -24,7 +24,6 @@ export default function routeStack() {
 	const dispatch = useDispatch();
 	const retrieveData = async () => {
 		const value = await AsyncStorage.getItem("user");
-		console.log(value);
 		if (value) {
 			dispatch(login(JSON.parse(value)));
 		}
@@ -37,7 +36,7 @@ export default function routeStack() {
 	}, []);
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName={Home}>
+			<Stack.Navigator>
 				<Stack.Screen
 					name="HomeTabs"
 					component={HomeTabs}
@@ -59,7 +58,8 @@ export default function routeStack() {
 					options={{
 						title: "Sessions",
 						headerStyle: {
-							backgroundColor: "#4267B2",
+							backgroundColor: "#7c0000",
+							height: 80,
 						},
 						headerTintColor: "#fff",
 						headerTitleStyle: {

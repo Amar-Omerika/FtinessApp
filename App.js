@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import RouteStack from "./routes/routeStack";
-import store from "./Store/store";
 import { Provider } from "react-redux";
+import store from "./Store/store";
 
 export default function App() {
 	return (
