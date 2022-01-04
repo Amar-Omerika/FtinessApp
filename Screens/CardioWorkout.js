@@ -29,7 +29,12 @@ export default function CardioWorkout() {
 				keyExtractor={(item) => item._id}
 				renderItem={({ item }) => (
 					<TouchableOpacity onPress={() => Linking.openURL(item.link)}>
-						<View style={{ flexDirection: "row", marginTop: 10 }}>
+						<View
+							style={{
+								flexDirection: "row",
+								marginTop: 10,
+							}}
+						>
 							<View>
 								<Image
 									source={{
@@ -52,8 +57,8 @@ export default function CardioWorkout() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		marginLeft: 5,
-		marginBottom: 20,
+		paddingBottom: 20,
+		backgroundColor: "#121212",
 	},
 	img: {
 		width: 133,

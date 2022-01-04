@@ -53,8 +53,8 @@ export default function BurnWorkouts() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		marginLeft: 5,
-		marginBottom: 20,
+		backgroundColor: "#121212",
+		paddingBottom: 20,
 	},
 	img: {
 		width: 133,

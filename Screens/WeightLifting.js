@@ -53,8 +53,8 @@ export default function WeightLifting() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		marginLeft: 5,
-		marginBottom: 20,
+		paddingBottom: 20,
+		backgroundColor: "#121212",
 	},
 	img: {
 		width: 133,
