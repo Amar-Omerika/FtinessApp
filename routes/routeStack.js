@@ -24,6 +24,7 @@ export default function routeStack() {
 	const dispatch = useDispatch();
 	const retrieveData = async () => {
 		const value = await AsyncStorage.getItem("user");
+		console.log(value);
 		if (value) {
 			dispatch(login(JSON.parse(value)));
 		}
@@ -43,15 +44,17 @@ export default function routeStack() {
 					options={{ headerShown: false }}
 				/>
 				<Stack.Screen
-					name="Home"
-					component={Home}
+					name="Login"
+					component={Login}
 					options={{ headerShown: false }}
 				/>
+
 				<Stack.Screen
-					name="Landing"
-					component={Landing}
+					name="Register"
+					component={Register}
 					options={{ headerShown: false }}
 				/>
+
 				<Stack.Screen
 					name="Sessions"
 					component={Sessions}
@@ -68,17 +71,6 @@ export default function routeStack() {
 					}}
 				/>
 
-				<Stack.Screen
-					name="Login"
-					component={Login}
-					options={{ headerShown: false }}
-				/>
-
-				<Stack.Screen
-					name="Register"
-					component={Register}
-					options={{ headerShown: false }}
-				/>
 				<Stack.Screen
 					name="WeightLifting"
 					component={WeightLifting}

@@ -45,7 +45,19 @@ export default function Login() {
 		>
 			<View style={styles.container}>
 				<Image source={landingImage} style={{ height: 250, zIndex: -1 }} />
-
+				<View style={{ marginLeft: 10 }}>
+					<Text
+						style={{
+							fontSize: 30,
+							zIndex: 1,
+							color: "#BA0000",
+							marginTop: -60,
+							fontWeight: "bold",
+						}}
+					>
+						Login
+					</Text>
+				</View>
 				<View style={styles.loginContainer}>
 					<View style={{ alignSelf: "center", marginTop: 45 }}>
 						<Text style={{ fontSize: 25, fontWeight: "bold" }}>
@@ -106,7 +118,7 @@ export default function Login() {
 
 					<TouchableOpacity
 						style={{
-							backgroundColor: "#4267B2",
+							backgroundColor: "#3e0000",
 							marginTop: 30,
 							alignItems: "center",
 							height: 50,

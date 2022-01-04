@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import {
 	StyleSheet,
@@ -16,12 +17,13 @@ import mailIcon from "../assets/mailIcon.png";
 import passwordIcon from "../assets/passwordIcon.png";
 import profileIcon from "../assets/person.png";
 import Message from "../Components/Message";
-export default function Register({ navigation }) {
+export default function Register() {
 	const [email, setEmail] = useState("");
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [message, setMessage] = useState(false);
-	const SCREEN_HEIGHT = Dimensions.get("screen").height;
+
+	const navigation = useNavigation();
 	const handleRegister = async () => {
 		if (!email || !password || !username) {
 			if (!message) {
@@ -32,7 +34,7 @@ export default function Register({ navigation }) {
 		navigation.navigate("Login");
 	};
 	return (
-		<KeyboardAwareScrollView style={{ height: SCREEN_HEIGHT }}>
+		<KeyboardAwareScrollView style={{ flex: 1 }}>
 			<View style={styles.container}>
 				<Image source={landingImage} style={{ height: 250, zIndex: -1 }} />
 				<View style={{ marginLeft: 10 }}>
@@ -40,7 +42,7 @@ export default function Register({ navigation }) {
 						style={{
 							fontSize: 30,
 							zIndex: 1,
-							color: "#4267B2",
+							color: "#BA0000",
 							marginTop: -60,
 							fontWeight: "bold",
 						}}
@@ -133,7 +135,7 @@ export default function Register({ navigation }) {
 
 					<TouchableOpacity
 						style={{
-							backgroundColor: "#4267B2",
+							backgroundColor: "#3e0000",
 							marginTop: 30,
 							alignItems: "center",
 							height: 50,
@@ -178,7 +180,7 @@ const styles = StyleSheet.create({
 		backgroundColor: "white",
 		borderRadius: 20,
 		marginTop: -20,
-		height: 487,
+		height: 650,
 	},
 	inputContainer: {
 		alignSelf: "center",

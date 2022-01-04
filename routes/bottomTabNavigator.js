@@ -155,5 +155,12 @@ function HomeTabs() {
 		</Tab.Navigator>
 	);
 }
+const TempScreen = () => {
+	return (
+		<View>
+			<Text></Text>
+		</View>
+	);
+};
 
 export default HomeTabs;
