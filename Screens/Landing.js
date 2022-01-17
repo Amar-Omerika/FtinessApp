@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
 		backgroundColor: "white",
 		borderRadius: 20,
 		marginTop: -20,
-		height: 487,
+		height: 587,
 	},
 	inputContainer: {
 		alignSelf: "center",

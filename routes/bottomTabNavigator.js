@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../Screens/Home";
 import Libary from "../Screens/Libary";
 import MuscleGroups from "../Screens/MuscleGroups";
+import Landing from "../Screens/Landing";
 import Sessions from "../Screens/Sessions";
 import Profile from "../Screens/Profile";
 import profile from "../assets/mema.png";
@@ -48,8 +49,8 @@ function HomeTabs() {
 			}}
 		>
 			<Tab.Screen
-				name="Home"
-				component={Home}
+				name="Sessions"
+				component={Sessions}
 				options={{
 					tabBarShowLabel: false,
 					headerShown: false,
@@ -134,10 +135,7 @@ function HomeTabs() {
 				options={{
 					tabBarShowLabel: false,
 					headerTintColor: "#fff",
-					headerStyle: {
-						backgroundColor: "#7c0000",
-						height: 80,
-					},
+					headerShown: false,
 					tabBarIcon: (focused) => {
 						return (
 							<View
@@ -155,12 +153,5 @@ function HomeTabs() {
 		</Tab.Navigator>
 	);
 }
-const TempScreen = () => {
-	return (
-		<View>
-			<Text></Text>
-		</View>
-	);
-};
 
 export default HomeTabs;

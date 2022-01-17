@@ -17,10 +17,11 @@ export default function Profile() {
 	const dispatch = useDispatch();
 	const handleLogout = () => {
 		dispatch(logout());
+		navigation.navigate("Home");
 	};
 	return (
 		<View style={styles.container}>
-			<View>
+			<View style={{ alignSelf: "center", marginTop: 500 }}>
 				<TouchableOpacity onPress={() => handleLogout()}>
 					<Text style={{ color: "white" }}>Logout</Text>
 				</TouchableOpacity>

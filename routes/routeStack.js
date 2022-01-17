@@ -43,19 +43,24 @@ export default function routeStack() {
 					component={HomeTabs}
 					options={{ headerShown: false }}
 				/>
+
+				<Stack.Screen
+					name="Home"
+					component={Home}
+					options={{ headerShown: false }}
+				/>
 				<Stack.Screen
 					name="Login"
 					component={Login}
 					options={{ headerShown: false }}
 				/>
-
 				<Stack.Screen
 					name="Register"
 					component={Register}
 					options={{ headerShown: false }}
 				/>
 
-				<Stack.Screen
+				{/* <Stack.Screen
 					name="Sessions"
 					component={Sessions}
 					options={{
@@ -69,7 +74,7 @@ export default function routeStack() {
 							fontWeight: "bold",
 						},
 					}}
-				/>
+				/> */}
 
 				<Stack.Screen
 					name="WeightLifting"
