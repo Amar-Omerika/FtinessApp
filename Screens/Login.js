@@ -36,7 +36,7 @@ export default function Login() {
 			})
 		);
 
-		navigation.navigate("Home");
+		navigation.navigate("Sessions");
 	};
 	return (
 		<KeyboardAvoidingView
