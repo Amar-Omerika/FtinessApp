@@ -15,6 +15,8 @@ import { logout } from "../Store/user";
 import { useNavigation } from "@react-navigation/core";
 import mema from "../assets/mema.png";
 import edit from "../assets/edit.png";
+import biceps from "../assets/biceps.png";
+
 export default function Profile() {
 	const navigation = useNavigation();
 	const dispatch = useDispatch();
@@ -63,8 +65,31 @@ export default function Profile() {
 						Profile
 					</Text>
 				</View>
+				<View style={styles.completedWorkouts}>
+					<View style={{ flexDirection: "row" }}>
+						<Image
+							source={biceps}
+							style={{ width: 40, height: 40, marginTop: 20, marginLeft: 10 }}
+						/>
+						<View>
+							<Text style={{ marginTop: 30, fontSize: 25, marginLeft: 5 }}>
+								Finished
+							</Text>
+						</View>
+					</View>
+					<View>
+						<Text style={{ marginTop: 30, fontSize: 45, alignSelf: "center" }}>
+							12
+						</Text>
+					</View>
+					<View>
+						<Text style={{ marginTop: 20, fontSize: 15, alignSelf: "center" }}>
+							Completed Workouts
+						</Text>
+					</View>
+				</View>
 
-				<View style={{ alignSelf: "center", marginTop: 500 }}>
+				<View style={{ alignSelf: "center", marginTop: 200 }}>
 					<TouchableOpacity onPress={() => handleLogout()}>
 						<Text style={{ color: "white" }}>Logout</Text>
 					</TouchableOpacity>
@@ -101,5 +126,13 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: "#121212",
+	},
+	completedWorkouts: {
+		width: 166,
+		height: 210,
+		borderRadius: 10,
+		marginLeft: 20,
+		marginTop: 20,
+		backgroundColor: "white",
 	},
 });
