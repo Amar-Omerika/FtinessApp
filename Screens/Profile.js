@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
 	StyleSheet,
 	Text,
@@ -13,6 +13,9 @@ import { useNavigation } from "@react-navigation/core";
 import HeaderProfile from "../Components/HeaderProfile";
 import CompletedWorkouts from "../Components/CompletedCard";
 import InProgressCard from "../Components/InProgressCard,";
+import TimeSpentCard from "../Components/TimeSpentCard";
+import MyGoals from "../Components/MyGoals";
+import WeightProgress from "../Components/WeightProgress";
 
 export default function Profile() {
 	const navigation = useNavigation();
@@ -27,7 +30,14 @@ export default function Profile() {
 				<HeaderProfile />
 				<View style={{ flexDirection: "row" }}>
 					<CompletedWorkouts />
-					<InProgressCard />
+					<View>
+						<InProgressCard />
+						<TimeSpentCard />
+					</View>
+				</View>
+				<View style={{ flexDirection: "row" }}>
+					<MyGoals />
+					<WeightProgress />
 				</View>
 
 				<View style={{ alignSelf: "center", marginTop: 200 }}>

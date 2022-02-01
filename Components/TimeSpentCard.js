@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import progress from "../assets/Progress.png";
-export default function InProgressCard() {
+import React from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
+import stopwatch from "../assets/stopwatch.png";
+export default function TimeSpentCard() {
 	return (
 		<View style={styles.container}>
-			<View style={styles.inProgress}>
+			<View style={styles.timeSpent}>
 				<View style={{ flexDirection: "row" }}>
-					<Image source={progress} style={{ marginTop: 10, marginLeft: 10 }} />
+					<Image source={stopwatch} style={{ marginTop: 10, marginLeft: 10 }} />
 					<Text
 						style={{
 							marginLeft: 10,
@@ -15,7 +15,7 @@ export default function InProgressCard() {
 							fontWeight: "bold",
 						}}
 					>
-						In Progress
+						Time Spent
 					</Text>
 				</View>
 				<View style={{ flexDirection: "row" }}>
@@ -27,7 +27,7 @@ export default function InProgressCard() {
 							fontWeight: "bold",
 						}}
 					>
-						2
+						90
 					</Text>
 					<Text
 						style={{
@@ -36,7 +36,7 @@ export default function InProgressCard() {
 							fontSize: 15,
 						}}
 					>
-						Workouts
+						Minutes
 					</Text>
 				</View>
 			</View>
@@ -48,11 +48,12 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 	},
-	inProgress: {
+	timeSpent: {
 		width: 166,
 		height: 105,
 		backgroundColor: "white",
 		borderRadius: 10,
-		marginTop: 80,
+		marginTop: 5,
+		marginRight: 20,
 	},
 });
