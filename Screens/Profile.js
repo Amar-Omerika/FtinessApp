@@ -35,37 +35,38 @@ export default function Profile() {
 						<TimeSpentCard />
 					</View>
 				</View>
-				<View style={{ flexDirection: "row" }}>
+				<View style={{ flexDirection: "row", marginTop: 20 }}>
 					<MyGoals />
 					<WeightProgress />
 				</View>
-
-				<View style={{ alignSelf: "center", marginTop: 200 }}>
-					<TouchableOpacity onPress={() => handleLogout()}>
-						<Text style={{ color: "white" }}>Logout</Text>
-					</TouchableOpacity>
-					<TouchableOpacity
-						style={{
-							backgroundColor: "#4267B2",
-							marginTop: 30,
-							alignItems: "center",
-							height: 50,
-							width: 229,
-							borderRadius: 50,
-							alignSelf: "center",
-						}}
-						onPress={() => navigation.navigate("Login")}
-					>
+				<View style={styles.btnWorkouts}>
+					<View style={{ flexDirection: "row" }}>
 						<Text
 							style={{
-								color: "white",
-								fontWeight: "bold",
-								padding: 15,
-								fontSize: 16,
+								fontSize: 20,
+								fontWeight: "500",
+								marginVertical: 10,
+								marginLeft: 20,
 							}}
 						>
-							Login
+							My Workouts
 						</Text>
+						<Text
+							style={{
+								fontSize: 20,
+								fontWeight: "500",
+								marginVertical: 10,
+								marginLeft: 170,
+								marginRight: 20,
+							}}
+						>
+							{">"}
+						</Text>
+					</View>
+				</View>
+				<View style={{ alignSelf: "center", marginTop: 40 }}>
+					<TouchableOpacity onPress={() => handleLogout()}>
+						<Text style={{ color: "white" }}>Logout</Text>
 					</TouchableOpacity>
 				</View>
 			</ScrollView>
@@ -77,5 +78,14 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: "#121212",
+	},
+	btnWorkouts: {
+		backgroundColor: "white",
+		flex: 1,
+		height: 50,
+		borderRadius: 10,
+		marginRight: 20,
+		marginLeft: 20,
+		marginTop: 40,
 	},
 });
