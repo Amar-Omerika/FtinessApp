@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import mema from "../assets/mema.png";
 
-import Modal from "./Modal";
+import TrainingLevelModal from "./Modal";
 
 export default function Header() {
 	return (
@@ -23,7 +23,7 @@ export default function Header() {
 					Sessions
 				</Text>
 			</View>
-			<Modal />
+			<TrainingLevelModal />
 		</View>
 	);
 }
