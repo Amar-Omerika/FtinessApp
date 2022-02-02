@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import mema from "../assets/mema.png";
+import levels from "../assets/levels.png";
+
 export default function Header() {
 	return (
 		<View
@@ -20,6 +22,20 @@ export default function Header() {
 					Sessions
 				</Text>
 			</View>
+			<TouchableOpacity>
+				<View style={{ flex: 1 }}>
+					<Image
+						source={levels}
+						style={{
+							height: 40,
+							width: 40,
+							marginTop: 30,
+							marginLeft: 156,
+							marginRight: 20,
+						}}
+					/>
+				</View>
+			</TouchableOpacity>
 		</View>
 	);
 }
