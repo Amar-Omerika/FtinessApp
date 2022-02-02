@@ -4,30 +4,32 @@ import weight from "../assets/weight.png";
 export default function WeightProgress() {
 	return (
 		<View style={styles.container}>
-			<View style={styles.weightProgress}>
-				<View style={{ flexDirection: "row" }}>
-					<Image
-						source={weight}
-						style={{
-							marginTop: 10,
-							marginLeft: 10,
-							marginRight: 10,
-							height: 30,
-							width: 30,
-						}}
-					/>
-					<Text
-						style={{
-							alignSelf: "center",
-							marginTop: 10,
-							fontSize: 20,
-							fontWeight: "bold",
-						}}
-					>
-						My Weight Progress {">"}
-					</Text>
+			<TouchableOpacity>
+				<View style={styles.weightProgress}>
+					<View style={{ flexDirection: "row" }}>
+						<Image
+							source={weight}
+							style={{
+								marginTop: 10,
+								marginLeft: 10,
+								marginRight: 10,
+								height: 30,
+								width: 30,
+							}}
+						/>
+						<Text
+							style={{
+								alignSelf: "center",
+								marginTop: 10,
+								fontSize: 20,
+								fontWeight: "bold",
+							}}
+						>
+							My Weight Progress {">"}
+						</Text>
+					</View>
 				</View>
-			</View>
+			</TouchableOpacity>
 		</View>
 	);
 }

@@ -39,31 +39,33 @@ export default function Profile() {
 					<MyGoals />
 					<WeightProgress />
 				</View>
-				<View style={styles.btnWorkouts}>
-					<View style={{ flexDirection: "row" }}>
-						<Text
-							style={{
-								fontSize: 20,
-								fontWeight: "500",
-								marginVertical: 10,
-								marginLeft: 20,
-							}}
-						>
-							My Workouts
-						</Text>
-						<Text
-							style={{
-								fontSize: 20,
-								fontWeight: "500",
-								marginVertical: 10,
-								marginLeft: 170,
-								marginRight: 20,
-							}}
-						>
-							{">"}
-						</Text>
+				<TouchableOpacity>
+					<View style={styles.btnWorkouts}>
+						<View style={{ flexDirection: "row" }}>
+							<Text
+								style={{
+									fontSize: 20,
+									fontWeight: "500",
+									marginVertical: 10,
+									marginLeft: 20,
+								}}
+							>
+								My Workouts
+							</Text>
+							<Text
+								style={{
+									fontSize: 20,
+									fontWeight: "500",
+									marginVertical: 10,
+									marginLeft: 170,
+									marginRight: 20,
+								}}
+							>
+								{">"}
+							</Text>
+						</View>
 					</View>
-				</View>
+				</TouchableOpacity>
 				<View style={{ alignSelf: "center", marginTop: 40 }}>
 					<TouchableOpacity onPress={() => handleLogout()}>
 						<Text style={{ color: "white" }}>Logout</Text>
