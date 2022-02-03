@@ -14,6 +14,18 @@ import { useNavigation } from "@react-navigation/core";
 export default function TrainingLevelModal() {
 	const navigation = useNavigation();
 	const [modalVisible, setModalVisible] = useState(false);
+	const handleBeginner = () => {
+		navigation.navigate("Beginner");
+		setModalVisible(!modalVisible);
+	};
+	const handleIntermediate = () => {
+		navigation.navigate("Intermediate");
+		setModalVisible(!modalVisible);
+	};
+	const handleAdvanced = () => {
+		navigation.navigate("Advanced");
+		setModalVisible(!modalVisible);
+	};
 	return (
 		<View style={styles.centeredView}>
 			<Modal
@@ -27,14 +39,14 @@ export default function TrainingLevelModal() {
 			>
 				<View style={styles.centeredView}>
 					<View style={styles.modalView}>
-						<TouchableOpacity onPress={() => navigation.navigate("Beginner")}>
-							<Text style={styles.modalText}>Hello World!</Text>
+						<TouchableOpacity onPress={() => handleBeginner()}>
+							<Text style={styles.modalText}>Beginner</Text>
 						</TouchableOpacity>
-						<TouchableOpacity
-							style={[styles.button, styles.buttonClose]}
-							onPress={() => setModalVisible(!modalVisible)}
-						>
-							<Text style={styles.textStyle}>Hide Modal</Text>
+						<TouchableOpacity onPress={() => handleIntermediate()}>
+							<Text style={styles.modalText}>Intermediate</Text>
+						</TouchableOpacity>
+						<TouchableOpacity onPress={() => handleAdvanced()}>
+							<Text style={styles.modalText}>Advanced</Text>
 						</TouchableOpacity>
 					</View>
 				</View>
