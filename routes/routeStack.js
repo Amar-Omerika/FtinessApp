@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
-import Landing from "../Screens/Landing";
 import Login from "../Screens/Login";
 import Register from "../Screens/Register";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Sessions from "../Screens/Sessions";
 import HomeTabs from "./bottomTabNavigator";
 import BurnWorkout from "../Screens/BurnWorkout";
 import WeightLifting from "../Screens/WeightLifting";
@@ -16,6 +14,9 @@ import Legs from "../Screens/Legs";
 import Back from "../Screens/Back";
 import Shoulder from "../Screens/Shoulder";
 import Abs from "../Screens/Abs";
+import Beginner from "../Screens/Beginner";
+import Intermediate from "../Screens/Intermediate";
+import Advanced from "../Screens/Advanced";
 import { login } from "../Store/user";
 import { useDispatch } from "react-redux";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -59,23 +60,6 @@ export default function routeStack() {
 					component={Register}
 					options={{ headerShown: false }}
 				/>
-
-				{/* <Stack.Screen
-					name="Sessions"
-					component={Sessions}
-					options={{
-						title: "Sessions",
-						headerStyle: {
-							backgroundColor: "#7c0000",
-							height: 80,
-						},
-						headerTintColor: "#fff",
-						headerTitleStyle: {
-							fontWeight: "bold",
-						},
-					}}
-				/> */}
-
 				<Stack.Screen
 					name="WeightLifting"
 					component={WeightLifting}
@@ -194,6 +178,48 @@ export default function routeStack() {
 					component={Shoulder}
 					options={{
 						title: "Shoulder",
+						headerStyle: {
+							backgroundColor: "#7c0000",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "bold",
+						},
+					}}
+				/>
+				<Stack.Screen
+					name="Beginner"
+					component={Beginner}
+					options={{
+						title: "Beginner",
+						headerStyle: {
+							backgroundColor: "#7c0000",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "bold",
+						},
+					}}
+				/>
+				<Stack.Screen
+					name="Intermediate"
+					component={Intermediate}
+					options={{
+						title: "Intermediate",
+						headerStyle: {
+							backgroundColor: "#7c0000",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "bold",
+						},
+					}}
+				/>
+				<Stack.Screen
+					name="Advanced"
+					component={Advanced}
+					options={{
+						title: "Advanced",
 						headerStyle: {
 							backgroundColor: "#7c0000",
 						},

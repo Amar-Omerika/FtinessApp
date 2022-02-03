@@ -8,10 +8,11 @@ import {
 	Modal,
 	Pressable,
 } from "react-native";
-
 import levels from "../assets/levels.png";
+import { useNavigation } from "@react-navigation/core";
 
 export default function TrainingLevelModal() {
+	const navigation = useNavigation();
 	const [modalVisible, setModalVisible] = useState(false);
 	return (
 		<View style={styles.centeredView}>
@@ -26,7 +27,9 @@ export default function TrainingLevelModal() {
 			>
 				<View style={styles.centeredView}>
 					<View style={styles.modalView}>
-						<Text style={styles.modalText}>Hello World!</Text>
+						<TouchableOpacity onPress={() => navigation.navigate("Beginner")}>
+							<Text style={styles.modalText}>Hello World!</Text>
+						</TouchableOpacity>
 						<TouchableOpacity
 							style={[styles.button, styles.buttonClose]}
 							onPress={() => setModalVisible(!modalVisible)}
@@ -46,7 +49,6 @@ export default function TrainingLevelModal() {
 					style={{
 						height: 40,
 						width: 40,
-						marginTop: 10,
 						marginLeft: 156,
 						marginRight: 20,
 					}}
