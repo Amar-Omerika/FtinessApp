@@ -19,7 +19,11 @@ import Intermediate from "../Screens/Intermediate";
 import Advanced from "../Screens/Advanced";
 import { login } from "../Store/user";
 import { useDispatch } from "react-redux";
+import { Image } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import beginnerIcon from "../assets/beginnerIcon.png";
+import intermediate from "../assets/intermediate.png";
+import advanced from "../assets/advanced.png";
 const Stack = createNativeStackNavigator();
 export default function routeStack() {
 	const dispatch = useDispatch();
@@ -36,6 +40,15 @@ export default function routeStack() {
 		if (mounted) retrieveData();
 		return () => (mounted = false);
 	}, []);
+	const icon = () => {
+		return <Image source={beginnerIcon} />;
+	};
+	const icon1 = () => {
+		return <Image source={intermediate} />;
+	};
+	const icon2 = () => {
+		return <Image source={advanced} />;
+	};
 	return (
 		<NavigationContainer>
 			<Stack.Navigator>
@@ -191,6 +204,7 @@ export default function routeStack() {
 					name="Beginner"
 					component={Beginner}
 					options={{
+						headerRight: () => icon(),
 						title: "Beginner",
 						headerStyle: {
 							backgroundColor: "#7c0000",
@@ -205,6 +219,7 @@ export default function routeStack() {
 					name="Intermediate"
 					component={Intermediate}
 					options={{
+						headerRight: () => icon1(),
 						title: "Intermediate",
 						headerStyle: {
 							backgroundColor: "#7c0000",
@@ -219,6 +234,7 @@ export default function routeStack() {
 					name="Advanced"
 					component={Advanced}
 					options={{
+						headerRight: () => icon2(),
 						title: "Advanced",
 						headerStyle: {
 							backgroundColor: "#7c0000",
