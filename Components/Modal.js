@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import levels from "../assets/levels.png";
 import { useNavigation } from "@react-navigation/core";
+import icon from "../assets/iconModal.png";
 
 export default function TrainingLevelModal() {
 	const navigation = useNavigation();
@@ -33,20 +34,39 @@ export default function TrainingLevelModal() {
 				transparent={true}
 				visible={modalVisible}
 				onRequestClose={() => {
-					Alert.alert("Modal has been closed.");
 					setModalVisible(!modalVisible);
 				}}
 			>
 				<View style={styles.centeredView}>
 					<View style={styles.modalView}>
-						<TouchableOpacity onPress={() => handleBeginner()}>
-							<Text style={styles.modalText}>Beginner</Text>
-						</TouchableOpacity>
-						<TouchableOpacity onPress={() => handleIntermediate()}>
-							<Text style={styles.modalText}>Intermediate</Text>
-						</TouchableOpacity>
-						<TouchableOpacity onPress={() => handleAdvanced()}>
-							<Text style={styles.modalText}>Advanced</Text>
+						<Text
+							style={{ marginBottom: 10, fontSize: 20, fontWeight: "bold" }}
+						>
+							Training levels
+						</Text>
+						<View style={{ flexDirection: "row" }}>
+							<Image source={icon} style={{ width: 40, height: 40 }} />
+							<TouchableOpacity onPress={() => handleBeginner()}>
+								<Text style={styles.modalText}>Beginner</Text>
+							</TouchableOpacity>
+						</View>
+						<View style={{ flexDirection: "row" }}>
+							<Image source={icon} style={{ width: 40, height: 40 }} />
+							<TouchableOpacity onPress={() => handleIntermediate()}>
+								<Text style={styles.modalText}>Intermediate</Text>
+							</TouchableOpacity>
+						</View>
+						<View style={{ flexDirection: "row" }}>
+							<Image source={icon} style={{ width: 40, height: 40 }} />
+							<TouchableOpacity onPress={() => handleAdvanced()}>
+								<Text style={styles.modalText}>Advanced</Text>
+							</TouchableOpacity>
+						</View>
+						<TouchableOpacity
+							style={[styles.button, styles.buttonClose]}
+							onPress={() => setModalVisible(!modalVisible)}
+						>
+							<Text style={styles.textStyle}>Close</Text>
 						</TouchableOpacity>
 					</View>
 				</View>
@@ -71,21 +91,8 @@ export default function TrainingLevelModal() {
 }
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-	},
-	loginContainer: {
-		backgroundColor: "white",
-		borderRadius: 20,
-		marginTop: -20,
-		flex: 1,
-	},
-	inputContainer: {
-		alignSelf: "center",
-	},
 	centeredView: {
 		flex: 1,
-		justifyContent: "center",
 		alignItems: "center",
 		marginTop: 22,
 	},
@@ -94,7 +101,7 @@ const styles = StyleSheet.create({
 		backgroundColor: "white",
 		borderRadius: 20,
 		padding: 35,
-		alignItems: "center",
+		paddingBottom: 5,
 		shadowColor: "#000",
 		shadowOffset: {
 			width: 0,
@@ -103,6 +110,7 @@ const styles = StyleSheet.create({
 		shadowOpacity: 0.25,
 		shadowRadius: 4,
 		elevation: 5,
+		width: 300,
 	},
 	button: {
 		borderRadius: 20,
@@ -111,7 +119,9 @@ const styles = StyleSheet.create({
 	},
 
 	buttonClose: {
-		backgroundColor: "#2196F3",
+		backgroundColor: "#7C0000",
+		width: 100,
+		marginLeft: 150,
 	},
 	textStyle: {
 		color: "white",
@@ -119,7 +129,8 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 	},
 	modalText: {
-		marginBottom: 15,
+		marginVertical: 10,
+		marginLeft: 10,
 		textAlign: "center",
 	},
 });
