@@ -12,6 +12,8 @@ import homeIcon from "../assets/homeIcon.png";
 import libaryIcon from "../assets/libaryIcon.png";
 import focusIcon from "../assets/focusIcon.png";
 import profileIcon from "../assets/profileIcon.png";
+import filter from "../assets/filter-icon.png";
+import { TouchableOpacity } from "react-native-web";
 
 const Tab = createBottomTabNavigator();
 function LogoTitle() {
@@ -110,11 +112,11 @@ function HomeTabs() {
 				options={{
 					tabBarShowLabel: false,
 					headerTintColor: "#fff",
-
-					headerStyle: {
+					/*headerStyle: {
 						backgroundColor: "#7c0000",
 						height: 80,
-					},
+					},*/
+					headerShown: false,
 					tabBarIcon: (focused) => {
 						return (
 							<View
