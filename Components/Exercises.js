@@ -18,7 +18,7 @@ export default function Exercises() {
 
 	const getData = async () => {
 		const res = await fetch(
-			"https://run.mocky.io/v3/f8fc6c2e-69d8-460e-9ff2-f6699b9da37c"
+			"https://run.mocky.io/v3/8044eee4-8cb4-4a9e-9b55-fbf15b112b8e"
 		);
 		const answer = await res.json();
 		setFilteredData(answer);
@@ -45,6 +45,7 @@ export default function Exercises() {
 							<Text style={styles.descriptionText}>
 								{item.title.toUpperCase()}
 							</Text>
+							<Text style={styles.category}>{item.category}</Text>
 						</View>
 					</View>
 				</TouchableOpacity>
@@ -128,5 +129,13 @@ const styles = StyleSheet.create({
 		marginTop: 3,
 		fontWeight: "bold",
 		textTransform: "uppercase",
+	},
+	category: {
+		color: "grey",
+		alignSelf: "flex-end",
+		marginRight: 10,
+		marginBottom: 10,
+		fontSize: 16,
+		fontWeight: "bold",
 	},
 });

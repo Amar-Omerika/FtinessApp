@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import mema from "../assets/mema.png";
 
-import TrainingLevelModal from "./Modal";
+import TrainingLevelModal from "../Modals/Modal";
 
 export default function Header() {
 	return (
