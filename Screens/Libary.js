@@ -6,7 +6,7 @@ const naziv = "Naziv";
 export default function Libary() {
 	return (
 		<View style={{ flex: 1 }}>
-			<LibaryHeader />
+			{/*<LibaryHeader />*/}
 			<Exercises />
 		</View>
 	);

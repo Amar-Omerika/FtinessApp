@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
-import TrainingLevelModal from "../Modals/Modal";
+import LibaryModal from "../Modals/LibaryModal";
 
 export default function LibaryHeader() {
 	return (
@@ -12,13 +12,13 @@ export default function LibaryHeader() {
 				height: 80,
 			}}
 		>
-			<View style={{ marginLeft: 20, marginTop: 25 }}>
+			<View style={{ marginLeft: 20, marginTop: 30 }}>
 				<Text style={{ fontSize: 20, color: "white", fontWeight: "bold" }}>
 					Libary
 				</Text>
 			</View>
 			<View style={{ marginLeft: 70 }}>
-				<TrainingLevelModal />
+				<LibaryModal />
 			</View>
 		</View>
 	);
