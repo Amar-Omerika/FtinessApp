@@ -7,6 +7,7 @@ import HomeTabs from "./bottomTabNavigator";
 import BurnWorkout from "../Screens/BurnWorkout";
 import WeightLifting from "../Screens/WeightLifting";
 import CardioWorkout from "../Screens/CardioWorkout";
+import EditProfile from "../Screens/EditProfile";
 import Home from "../Screens/Home";
 import Chest from "../Screens/Chest";
 import Arms from "../Screens/Arms";
@@ -40,6 +41,7 @@ export default function routeStack() {
 		if (mounted) retrieveData();
 		return () => (mounted = false);
 	}, []);
+
 	const icon = () => {
 		return <Image source={beginnerIcon} />;
 	};
@@ -62,6 +64,19 @@ export default function routeStack() {
 					name="Home"
 					component={Home}
 					options={{ headerShown: false }}
+				/>
+				<Stack.Screen
+					name="EditProfile"
+					component={EditProfile}
+					options={{
+						headerStyle: {
+							backgroundColor: "#7c0000",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "bold",
+						},
+					}}
 				/>
 				<Stack.Screen
 					name="Login"

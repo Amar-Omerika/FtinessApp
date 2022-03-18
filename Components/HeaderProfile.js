@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import mema from "../assets/mema.png";
 import edit from "../assets/edit.png";
+import { useNavigation } from "@react-navigation/core";
 export default function HeaderProfile() {
+	const navigation = useNavigation();
+
 	return (
 		<View style={styles.container}>
 			<View style={{ flexDirection: "row" }}>
@@ -17,7 +20,7 @@ export default function HeaderProfile() {
 					<Text style={{ color: "white", fontSize: 20 }}>Anel Memić</Text>
 				</View>
 				<View>
-					<TouchableOpacity>
+					<TouchableOpacity onPress={() => navigation.navigate("EditProfile")}>
 						<Image
 							source={edit}
 							style={{
