@@ -11,7 +11,6 @@ import {
 	Modal,
 } from "react-native";
 import { Linking } from "react-native";
-import LibaryHeader from "./LibaryHeader";
 import icon from "../assets/iconModal.png";
 import filter from "../assets/filter-icon.png";
 
@@ -118,7 +117,7 @@ export default function Exercises() {
 											fontWeight: "bold",
 										}}
 									>
-										Training levels
+										Categories
 									</Text>
 									<View style={{ flexDirection: "row" }}>
 										<Image source={icon} style={{ width: 40, height: 40 }} />
@@ -145,8 +144,20 @@ export default function Exercises() {
 									</View>
 									<View style={{ flexDirection: "row" }}>
 										<Image source={icon} style={{ width: 40, height: 40 }} />
-										<TouchableOpacity onPress={() => handleAdvanced()}>
+										<TouchableOpacity onPress={() => filterCategory("Back")}>
 											<Text style={styles.modalText}>Back</Text>
+										</TouchableOpacity>
+									</View>
+									<View style={{ flexDirection: "row" }}>
+										<Image source={icon} style={{ width: 40, height: 40 }} />
+										<TouchableOpacity onPress={() => filterCategory("Gluteus")}>
+											<Text style={styles.modalText}>Gluteus</Text>
+										</TouchableOpacity>
+									</View>
+									<View style={{ flexDirection: "row" }}>
+										<Image source={icon} style={{ width: 40, height: 40 }} />
+										<TouchableOpacity onPress={() => filterCategory("Triceps")}>
+											<Text style={styles.modalText}>Triceps</Text>
 										</TouchableOpacity>
 									</View>
 									<TouchableOpacity
