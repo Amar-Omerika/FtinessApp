@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import {
 	StyleSheet,
 	View,
-	Button,
 	Image,
 	TouchableOpacity,
+	TextInput,
+	Text,
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import UploadImage from "../assets/uploadImage.png";
@@ -12,6 +13,8 @@ import defaultPicture from "../assets/defaultPicture.jpg";
 
 export default function EditProfile() {
 	const [image, setImage] = useState(null);
+	const [username, setUsername] = useState("");
+	const [email, setEmail] = useState("");
 	const pickImage = async () => {
 		// No permissions request is necessary for launching the image library
 		let result = await ImagePicker.launchImageLibraryAsync({
@@ -42,7 +45,6 @@ export default function EditProfile() {
 							style={{
 								alignSelf: "center",
 								marginTop: -150,
-
 								width: 150,
 								height: 150,
 								borderRadius: 100,
@@ -56,6 +58,68 @@ export default function EditProfile() {
 					</View>
 				</TouchableOpacity>
 			</View>
+			<View
+				style={{
+					flexDirection: "row",
+					backgroundColor: "#C0C0C0",
+					marginTop: 30,
+					borderRadius: 8,
+					marginLeft: 10,
+					marginRight: 10,
+				}}
+			>
+				<TextInput
+					style={styles.input}
+					value={username}
+					onChangeText={setUsername}
+					placeholder="Username..."
+				></TextInput>
+			</View>
+			<View
+				style={{
+					flexDirection: "row",
+					backgroundColor: "#C0C0C0",
+					marginTop: 30,
+					borderRadius: 8,
+					marginLeft: 10,
+					marginRight: 10,
+				}}
+			>
+				<TextInput
+					style={styles.input}
+					value={email}
+					onChangeText={setEmail}
+					placeholder="Email..."
+				></TextInput>
+			</View>
+			<TouchableOpacity>
+				<View style={styles.button}>
+					<Text
+						style={{
+							alignSelf: "center",
+							color: "white",
+							fontSize: 20,
+							fontWeight: "bold",
+						}}
+					>
+						Save Changes
+					</Text>
+				</View>
+			</TouchableOpacity>
+			<TouchableOpacity>
+				<View style={styles.button}>
+					<Text
+						style={{
+							alignSelf: "center",
+							color: "white",
+							fontSize: 20,
+							fontWeight: "bold",
+						}}
+					>
+						Cancel
+					</Text>
+				</View>
+			</TouchableOpacity>
 		</View>
 	);
 }
@@ -75,5 +139,20 @@ const styles = StyleSheet.create({
 		alignSelf: "center",
 		marginTop: -30,
 		marginLeft: 50,
+	},
+	input: {
+		padding: 14,
+		borderColor: "#B9C4CA",
+		borderWidth: 1,
+		borderRadius: 4,
+		fontSize: 16,
+	},
+	button: {
+		backgroundColor: "#7c0000",
+		marginTop: 30,
+		borderRadius: 8,
+		marginLeft: 10,
+		marginRight: 10,
+		padding: 15,
 	},
 });
