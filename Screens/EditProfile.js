@@ -10,11 +10,26 @@ import {
 import * as ImagePicker from "expo-image-picker";
 import UploadImage from "../assets/uploadImage.png";
 import defaultPicture from "../assets/defaultPicture.jpg";
+import { useDispatch } from "react-redux";
+import { useNavigation } from "@react-navigation/core";
+import { saveChanges } from "../Store/edit";
 
 export default function EditProfile() {
 	const [image, setImage] = useState(null);
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
+	const navigation = useNavigation();
+	const dispatch = useDispatch();
+	const handleEdit = () => {
+		dispatch(
+			saveChanges({
+				username,
+				email,
+				image,
+			})
+		);
+	};
+
 	const pickImage = async () => {
 		// No permissions request is necessary for launching the image library
 		let result = await ImagePicker.launchImageLibraryAsync({
@@ -92,7 +107,7 @@ export default function EditProfile() {
 					placeholder="Email..."
 				></TextInput>
 			</View>
-			<TouchableOpacity>
+			<TouchableOpacity onPress={() => handleEdit()}>
 				<View style={styles.button}>
 					<Text
 						style={{

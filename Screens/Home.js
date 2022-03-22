@@ -6,7 +6,6 @@ import Sessions from "./Sessions";
 
 export default function Home() {
 	const { user } = useSelector((state) => state.user);
-
 	return <View>{user ? <Sessions /> : <Landing />}</View>;
 }
 

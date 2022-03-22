@@ -1,10 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import mema from "../assets/mema.png";
-import edit from "../assets/edit.png";
+import editp from "../assets/edit.png";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/core";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { saveChanges } from "../Store/edit";
 export default function HeaderProfile() {
+	const [data, setData] = useState([]);
 	const navigation = useNavigation();
+	const dispatch = useDispatch();
+
+	const getDataFromUser = async () => {
+		const value = await AsyncStorage.getItem("edit");
+		console.log(value);
+		if (value) {
+			setData(value);
+		}
+	};
+
+	useEffect(() => {
+		let mounted = true;
+		if (mounted) getDataFromUser();
+		return () => (mounted = false);
+	}, []);
 
 	return (
 		<View style={styles.container}>
@@ -17,12 +36,14 @@ export default function HeaderProfile() {
 				</View>
 				<View style={{ marginTop: 50, marginLeft: 30 }}>
 					<Text style={{ color: "white", fontSize: 30 }}>Hi,</Text>
-					<Text style={{ color: "white", fontSize: 20 }}>Anel Memić</Text>
+					<Text style={{ color: "white", fontSize: 20 }}>
+						Mema ne radi{data.username}
+					</Text>
 				</View>
 				<View>
 					<TouchableOpacity onPress={() => navigation.navigate("EditProfile")}>
 						<Image
-							source={edit}
+							source={editp}
 							style={{
 								width: 40,
 								height: 40,
