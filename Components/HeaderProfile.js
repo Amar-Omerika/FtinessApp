@@ -10,13 +10,14 @@ export default function HeaderProfile() {
 	const [data, setData] = useState([]);
 	const navigation = useNavigation();
 	const dispatch = useDispatch();
-
 	const getDataFromUser = async () => {
 		const value = await AsyncStorage.getItem("edit");
-		console.log(value);
+		let parsed = JSON.parse(value);
 		if (value) {
-			setData(value);
+			setData(parsed);
 		}
+		console.log(parsed);
+		//console.log(data);
 	};
 
 	useEffect(() => {
@@ -35,10 +36,8 @@ export default function HeaderProfile() {
 					/>
 				</View>
 				<View style={{ marginTop: 50, marginLeft: 30 }}>
-					<Text style={{ color: "white", fontSize: 30 }}>Hi,</Text>
-					<Text style={{ color: "white", fontSize: 20 }}>
-						Mema ne radi{data.username}
-					</Text>
+					<Text style={{ color: "white", fontSize: 30 }}>Hi</Text>
+					<Text style={{ color: "white", fontSize: 20 }}>{data.username}</Text>
 				</View>
 				<View>
 					<TouchableOpacity onPress={() => navigation.navigate("EditProfile")}>
