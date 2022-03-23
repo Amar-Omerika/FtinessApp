@@ -18,7 +18,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function WorkoutCard() {
 	const navigation = useNavigation();
 	return (
-		<ScrollView style={{ marginBottom: 90 }}>
+		<ScrollView>
 			<View style={styles.container}>
 				<View style={{ marginTop: 20 }}>
 					<TouchableOpacity onPress={() => navigation.navigate("BurnWorkout")}>

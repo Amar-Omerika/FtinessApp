@@ -59,8 +59,8 @@ function HomeTabs() {
 					headerTintColor: "#fff",
 					tabBarStyle: {
 						backgroundColor: "#121212",
-						paddingTop: 10,
-						height: 60,
+						paddingTop: 5,
+						height: 80,
 						borderTopColor: "#121212",
 					},
 					headerStyle: {
@@ -92,6 +92,12 @@ function HomeTabs() {
 						backgroundColor: "#7c0000",
 						height: 80,
 					},
+					tabBarStyle: {
+						backgroundColor: "#121212",
+						paddingTop: 5,
+						height: 80,
+						borderTopColor: "#121212",
+					},
 					tabBarIcon: (focused) => {
 						return (
 							<View
@@ -116,6 +122,12 @@ function HomeTabs() {
 						backgroundColor: "#7c0000",
 						height: 80,
 					},*/
+					tabBarStyle: {
+						backgroundColor: "#121212",
+						paddingTop: 5,
+						height: 80,
+						borderTopColor: "#121212",
+					},
 					headerShown: false,
 					tabBarIcon: (focused) => {
 						return (
@@ -138,6 +150,12 @@ function HomeTabs() {
 					tabBarShowLabel: false,
 					headerTintColor: "#fff",
 					headerShown: false,
+					tabBarStyle: {
+						backgroundColor: "#121212",
+						paddingTop: 5,
+						height: 80,
+						borderTopColor: "#121212",
+					},
 					tabBarIcon: (focused) => {
 						return (
 							<View
