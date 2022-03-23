@@ -35,13 +35,14 @@ export default function EditProfile() {
 		let result = await ImagePicker.launchImageLibraryAsync({
 			mediaTypes: ImagePicker.MediaTypeOptions.All,
 			allowsEditing: true,
+			base64: true,
 			aspect: [4, 3],
 			quality: 1,
 		});
 		console.log(result);
 
 		if (!result.cancelled) {
-			setImage(result.uri);
+			setImage({ uri: result.uri, base64: result.base64 });
 		}
 	};
 	return (
@@ -56,7 +57,7 @@ export default function EditProfile() {
 				<View stlye={styles.imageContainer}>
 					{image && (
 						<Image
-							source={{ uri: image }}
+							source={{ uri: image.uri }}
 							style={{
 								alignSelf: "center",
 								marginTop: -150,

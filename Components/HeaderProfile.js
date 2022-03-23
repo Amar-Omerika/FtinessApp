@@ -17,7 +17,6 @@ export default function HeaderProfile() {
 			setData(parsed);
 		}
 		console.log(parsed);
-		//console.log(data);
 	};
 
 	useEffect(() => {
@@ -31,8 +30,16 @@ export default function HeaderProfile() {
 			<View style={{ flexDirection: "row" }}>
 				<View>
 					<Image
-						source={mema}
-						style={{ width: 80, height: 80, marginTop: 40, marginLeft: 20 }}
+						source={{ uri: data.image }}
+						style={{
+							width: 80,
+							height: 80,
+							marginTop: 40,
+							marginLeft: 20,
+							borderRadius: 100,
+							borderWidth: 2,
+							borderColor: "white",
+						}}
 					/>
 				</View>
 				<View style={{ marginTop: 50, marginLeft: 30 }}>
