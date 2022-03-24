@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import mema from "../assets/mema.png";
 import editp from "../assets/edit.png";
-import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/core";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { saveChanges } from "../Store/edit";
+
 export default function HeaderProfile() {
 	const [data, setData] = useState([]);
 	const navigation = useNavigation();
-	const dispatch = useDispatch();
 	const getDataFromUser = async () => {
 		const value = await AsyncStorage.getItem("edit");
 		let parsed = JSON.parse(value);
