@@ -24,7 +24,7 @@ export default function Header() {
 			style={{ flexDirection: "row", backgroundColor: "#7c0000", height: 80 }}
 		>
 			<Image
-				source={{ uri: data.image }}
+				source={data.image}
 				style={{
 					height: 50,
 					width: 50,

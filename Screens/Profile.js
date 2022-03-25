@@ -6,6 +6,7 @@ import {
 	Image,
 	TouchableOpacity,
 	ScrollView,
+	Button,
 } from "react-native";
 import { useDispatch } from "react-redux";
 import { logout } from "../Store/user";
@@ -16,6 +17,7 @@ import InProgressCard from "../Components/InProgressCard,";
 import TimeSpentCard from "../Components/TimeSpentCard";
 import MyGoals from "../Components/MyGoals";
 import WeightProgress from "../Components/WeightProgress";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Profile() {
 	const navigation = useNavigation();
@@ -23,6 +25,9 @@ export default function Profile() {
 	const handleLogout = () => {
 		dispatch(logout());
 		navigation.navigate("Home");
+	};
+	const clearAsyncStorage = async () => {
+		AsyncStorage.clear();
 	};
 	return (
 		<View style={styles.container}>
@@ -71,6 +76,9 @@ export default function Profile() {
 						<Text style={{ color: "white" }}>Logout</Text>
 					</TouchableOpacity>
 				</View>
+				<TouchableOpacity onPress={() => clearAsyncStorage()}>
+					<Text>Clear Async Storage</Text>
+				</TouchableOpacity>
 			</ScrollView>
 		</View>
 	);

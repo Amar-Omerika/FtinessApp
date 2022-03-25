@@ -27,7 +27,7 @@ export default function HeaderProfile() {
 			<View style={{ flexDirection: "row" }}>
 				<View>
 					<Image
-						source={{ uri: data.image }}
+						source={data.image}
 						style={{
 							width: 80,
 							height: 80,
@@ -51,7 +51,7 @@ export default function HeaderProfile() {
 								width: 40,
 								height: 40,
 								marginTop: 40,
-								marginLeft: 80,
+								marginLeft: 140,
 								marginRight: 20,
 							}}
 						/>

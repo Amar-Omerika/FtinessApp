@@ -28,6 +28,7 @@ export default function EditProfile() {
 				image,
 			})
 		);
+		//navigation.navigate("Profile");
 	};
 
 	const pickImage = async () => {
@@ -160,6 +161,7 @@ const styles = StyleSheet.create({
 		padding: 14,
 		borderColor: "#B9C4CA",
 		borderWidth: 1,
+		color: "white",
 		borderRadius: 4,
 		fontSize: 16,
 	},
