@@ -8,26 +8,20 @@ import {
 	Modal,
 	Pressable,
 } from "react-native";
-import levels from "../assets/levels.png";
 import { useNavigation } from "@react-navigation/core";
-import icon from "../assets/iconModal.png";
+import maxVolume from "../assets/maxVolume.png";
+import maxWeight from "../assets/maxWeight.png";
+import estimate from "../assets/estimate.png";
 import flag from "../assets/flag.png";
 
 export default function MyGoalsModal() {
 	const navigation = useNavigation();
 	const [modalVisible, setModalVisible] = useState(false);
-	const handleBeginner = () => {
-		navigation.navigate("Beginner");
+	const AddGoals = () => {
+		navigation.navigate("NewGoals");
 		setModalVisible(!modalVisible);
 	};
-	const handleIntermediate = () => {
-		navigation.navigate("Intermediate");
-		setModalVisible(!modalVisible);
-	};
-	const handleAdvanced = () => {
-		navigation.navigate("Advanced");
-		setModalVisible(!modalVisible);
-	};
+
 	return (
 		<View style={styles.centeredView}>
 			<Modal
@@ -41,34 +35,62 @@ export default function MyGoalsModal() {
 				<View style={styles.centeredView}>
 					<View style={styles.modalView}>
 						<Text
-							style={{ marginBottom: 10, fontSize: 20, fontWeight: "bold" }}
+							style={{
+								marginBottom: 10,
+								fontSize: 20,
+								fontWeight: "bold",
+								color: "white",
+							}}
 						>
 							My Goals
 						</Text>
-						<View style={{ flexDirection: "row" }}>
-							<Image source={icon} style={{ width: 40, height: 40 }} />
-							<TouchableOpacity onPress={() => handleBeginner()}>
-								<Text style={styles.modalText}>Beginner</Text>
-							</TouchableOpacity>
-						</View>
-						<View style={{ flexDirection: "row" }}>
-							<Image source={icon} style={{ width: 40, height: 40 }} />
-							<TouchableOpacity onPress={() => handleIntermediate()}>
-								<Text style={styles.modalText}>Intermediate</Text>
-							</TouchableOpacity>
-						</View>
-						<View style={{ flexDirection: "row" }}>
-							<Image source={icon} style={{ width: 40, height: 40 }} />
-							<TouchableOpacity onPress={() => handleAdvanced()}>
-								<Text style={styles.modalText}>Advanced</Text>
-							</TouchableOpacity>
-						</View>
-						<TouchableOpacity
-							style={[styles.button, styles.buttonClose]}
-							onPress={() => setModalVisible(!modalVisible)}
+						<View
+							style={{
+								backgroundColor: "white",
+								borderRadius: 10,
+								marginBottom: 10,
+							}}
 						>
-							<Text style={styles.textStyle}>Close</Text>
-						</TouchableOpacity>
+							<View style={{ flexDirection: "row" }}>
+								<Image source={estimate} style={styles.icons} />
+								<Text style={styles.modalText}>Estimate 1RM</Text>
+								<Text
+									style={{
+										marginLeft: 25,
+										marginVertical: 10,
+
+										textAlign: "center",
+										fontWeight: "bold",
+									}}
+								>
+									0 Kg
+								</Text>
+							</View>
+							<View style={{ flexDirection: "row" }}>
+								<Image source={maxWeight} style={styles.icons} />
+								<Text style={styles.modalText}>Max Weight</Text>
+								<Text style={styles.modalValues}>0 Kg</Text>
+							</View>
+							<View style={{ flexDirection: "row" }}>
+								<Image source={maxVolume} style={styles.icons} />
+								<Text style={styles.modalText}>Max Volume</Text>
+								<Text style={styles.modalValues}>0 Kg</Text>
+							</View>
+						</View>
+						<View style={{ flexDirection: "row" }}>
+							<TouchableOpacity
+								style={[styles.button, styles.buttonClose]}
+								onPress={() => setModalVisible(!modalVisible)}
+							>
+								<Text style={styles.textStyle}>Close</Text>
+							</TouchableOpacity>
+							<TouchableOpacity
+								style={[styles.button, styles.buttonAdd]}
+								onPress={() => AddGoals()}
+							>
+								<Text style={styles.textStyle}>Add New Goals</Text>
+							</TouchableOpacity>
+						</View>
 					</View>
 				</View>
 			</Modal>
@@ -128,7 +150,13 @@ const styles = StyleSheet.create({
 	buttonClose: {
 		backgroundColor: "#7C0000",
 		width: 100,
-		marginLeft: 150,
+		height: 40,
+	},
+	buttonAdd: {
+		backgroundColor: "#7C0000",
+		width: 100,
+		marginLeft: 30,
+		//marginLeft: 150,
 	},
 	textStyle: {
 		color: "white",
@@ -139,6 +167,14 @@ const styles = StyleSheet.create({
 		marginVertical: 10,
 		marginLeft: 10,
 		textAlign: "center",
+		fontWeight: "bold",
+	},
+	modalValues: {
+		marginVertical: 10,
+		flex: 1,
+		alignSelf: "flex-end",
+		textAlign: "center",
+		fontWeight: "bold",
 	},
 	timeSpent: {
 		width: 166,
@@ -146,5 +182,11 @@ const styles = StyleSheet.create({
 		backgroundColor: "white",
 		borderRadius: 10,
 		marginLeft: 20,
+	},
+	icons: {
+		width: 30,
+		height: 30,
+		marginLeft: 10,
+		marginTop: 5,
 	},
 });
