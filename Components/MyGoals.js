@@ -1,10 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import MyGoalsModal from "../Modals/MyGoalsModal";
 import flag from "../assets/flag.png";
 export default function MyGoals() {
 	return (
 		<View style={styles.container}>
-			<TouchableOpacity>
+			{/* <TouchableOpacity>
 				<View style={styles.timeSpent}>
 					<View style={{ flexDirection: "row" }}>
 						<Image
@@ -23,7 +24,8 @@ export default function MyGoals() {
 						</Text>
 					</View>
 				</View>
-			</TouchableOpacity>
+			</TouchableOpacity> */}
+			<MyGoalsModal />
 		</View>
 	);
 }
@@ -31,13 +33,6 @@ export default function MyGoals() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-	},
-	timeSpent: {
-		width: 166,
-		height: 70,
-		backgroundColor: "white",
-		borderRadius: 10,
-		marginTop: 15,
-		marginLeft: 20,
+		marginTop: -10,
 	},
 });

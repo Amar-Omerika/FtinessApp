@@ -76,9 +76,9 @@ export default function Profile() {
 						<Text style={{ color: "white" }}>Logout</Text>
 					</TouchableOpacity>
 				</View>
-				<TouchableOpacity onPress={() => clearAsyncStorage()}>
+				{/*<TouchableOpacity onPress={() => clearAsyncStorage()}>
 					<Text>Clear Async Storage</Text>
-				</TouchableOpacity>
+							</TouchableOpacity>*/}
 			</ScrollView>
 		</View>
 	);

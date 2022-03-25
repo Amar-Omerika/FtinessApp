@@ -13,7 +13,7 @@ export default function HeaderProfile() {
 		if (value) {
 			setData(parsed);
 		}
-		console.log(parsed);
+		//console.log(parsed);
 	};
 
 	useEffect(() => {
