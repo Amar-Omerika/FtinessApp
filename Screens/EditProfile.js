@@ -28,7 +28,7 @@ export default function EditProfile() {
 				image,
 			})
 		);
-		//navigation.navigate("Profile");
+		navigation.navigate("Profile");
 	};
 
 	const pickImage = async () => {
