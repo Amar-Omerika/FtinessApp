@@ -38,7 +38,7 @@ export default function EditProfile() {
 			allowsEditing: true,
 			base64: true,
 			aspect: [4, 3],
-			quality: 1,
+			quality: 0.5,
 		});
 		console.log(result);
 
