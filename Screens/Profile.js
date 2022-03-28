@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import {
 	StyleSheet,
 	Text,
@@ -7,6 +7,7 @@ import {
 	TouchableOpacity,
 	ScrollView,
 	Button,
+	RefreshControl,
 } from "react-native";
 import { useDispatch } from "react-redux";
 import { logout } from "../Store/user";
@@ -26,12 +27,29 @@ export default function Profile() {
 		dispatch(logout());
 		navigation.navigate("Home");
 	};
+
+	const wait = (timeout) => {
+		return new Promise((resolve) => setTimeout(resolve, timeout));
+	};
+
+	const [refreshing, setRefreshing] = useState(false);
+
+	const onRefresh = useCallback(() => {
+		setRefreshing(true);
+		wait(1000).then(() => setRefreshing(false));
+	}, []);
+
 	/*const clearAsyncStorage = async () => {
 		AsyncStorage.clear();
 	};*/
 	return (
 		<View style={styles.container}>
-			<ScrollView style={{ flex: 1 }}>
+			<ScrollView
+				style={{ flex: 1 }}
+				refreshControl={
+					<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+				}
+			>
 				<HeaderProfile />
 				<View style={{ flexDirection: "row" }}>
 					<CompletedWorkouts />
@@ -44,7 +62,7 @@ export default function Profile() {
 					<MyGoals />
 					<WeightProgress />
 				</View>
-				<TouchableOpacity>
+				<TouchableOpacity onPress={() => navigation.navigate("MyWorkouts")}>
 					<View style={styles.btnWorkouts}>
 						<View style={{ flexDirection: "row" }}>
 							<Text
