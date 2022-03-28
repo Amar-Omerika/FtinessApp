@@ -23,13 +23,13 @@ export const newgoalsSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { save, cancel } = newgoalsSlice.actions;
+export const { saveNewGoals, cancel } = newgoalsSlice.actions;
 
 export default newgoalsSlice.reducer;
 
-export const saveChanges = (fullUserObj) => async (dispatch) => {
+export const saveGoals = (fullUserObj) => async (dispatch) => {
 	try {
-		dispatch(save(fullUserObj));
+		dispatch(saveNewGoals(fullUserObj));
 	} catch (e) {
 		return console.error(e.message);
 	}

@@ -2,35 +2,30 @@ import React, { useState, useEffect } from "react";
 import {
 	StyleSheet,
 	View,
-	Image,
 	TouchableOpacity,
 	TextInput,
 	Text,
 } from "react-native";
-import * as ImagePicker from "expo-image-picker";
-import UploadImage from "../assets/uploadImage.png";
-import defaultPicture from "../assets/defaultPicture.jpg";
 import { useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/core";
-import { saveChanges } from "../Store/edit";
+import { saveGoals } from "../Store/newgoals";
 
-export default function EditProfile() {
+export default function NewGoals() {
 	const [estimate, setEstimate] = useState("");
 	const [maxWeight, setMaxWeight] = useState("");
 	const [maxVolume, setMaxVolume] = useState("");
 	const navigation = useNavigation();
 	const dispatch = useDispatch();
-	const handleEdit = () => {
+	const handleNewGoals = () => {
 		dispatch(
-			saveChanges({
-				username,
-				email,
-				image,
+			saveGoals({
+				estimate,
+				maxWeight,
+				maxVolume,
 			})
 		);
 		navigation.navigate("Profile");
 	};
-
 	return (
 		<View
 			style={{
@@ -89,7 +84,7 @@ export default function EditProfile() {
 					placeholder="maxVolume..."
 				></TextInput>
 			</View>
-			<TouchableOpacity onPress={() => handleEdit()}>
+			<TouchableOpacity onPress={() => handleNewGoals()}>
 				<View style={styles.button}>
 					<Text
 						style={{
@@ -103,7 +98,7 @@ export default function EditProfile() {
 					</Text>
 				</View>
 			</TouchableOpacity>
-			<TouchableOpacity>
+			<TouchableOpacity onPress={() => navigation.navigate("Profile")}>
 				<View style={styles.button}>
 					<Text
 						style={{

@@ -26,9 +26,9 @@ export default function Profile() {
 		dispatch(logout());
 		navigation.navigate("Home");
 	};
-	const clearAsyncStorage = async () => {
+	/*const clearAsyncStorage = async () => {
 		AsyncStorage.clear();
-	};
+	};*/
 	return (
 		<View style={styles.container}>
 			<ScrollView style={{ flex: 1 }}>

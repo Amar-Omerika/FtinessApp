@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
 	StyleSheet,
 	Text,
@@ -13,10 +13,24 @@ import maxVolume from "../assets/maxVolume.png";
 import maxWeight from "../assets/maxWeight.png";
 import estimate from "../assets/estimate.png";
 import flag from "../assets/flag.png";
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
 export default function MyGoalsModal() {
+	const [data, setData] = useState([]);
 	const navigation = useNavigation();
 	const [modalVisible, setModalVisible] = useState(false);
+	const getDataFromUser = async () => {
+		const value = await AsyncStorage.getItem("newgoals");
+		let parsed = JSON.parse(value);
+		if (value) {
+			setData(parsed);
+		}
+		//console.log(parsed);
+	};
+	useEffect(() => {
+		let mounted = true;
+		if (mounted) getDataFromUser();
+		return () => (mounted = false);
+	}, []);
 	const AddGoals = () => {
 		navigation.navigate("NewGoals");
 		setModalVisible(!modalVisible);
@@ -63,18 +77,18 @@ export default function MyGoalsModal() {
 										fontWeight: "bold",
 									}}
 								>
-									0 Kg
+									{data.estimate} Kg
 								</Text>
 							</View>
 							<View style={{ flexDirection: "row" }}>
 								<Image source={maxWeight} style={styles.icons} />
 								<Text style={styles.modalText}>Max Weight</Text>
-								<Text style={styles.modalValues}>0 Kg</Text>
+								<Text style={styles.modalValues}>{data.maxWeight} Kg</Text>
 							</View>
 							<View style={{ flexDirection: "row" }}>
 								<Image source={maxVolume} style={styles.icons} />
 								<Text style={styles.modalText}>Max Volume</Text>
-								<Text style={styles.modalValues}>0 Kg</Text>
+								<Text style={styles.modalValues}>{data.maxVolume} Kg</Text>
 							</View>
 						</View>
 						<View style={{ flexDirection: "row" }}>

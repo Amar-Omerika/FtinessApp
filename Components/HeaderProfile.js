@@ -51,7 +51,7 @@ export default function HeaderProfile() {
 								width: 40,
 								height: 40,
 								marginTop: 40,
-								marginLeft: 140,
+								marginLeft: 120,
 								marginRight: 20,
 							}}
 						/>

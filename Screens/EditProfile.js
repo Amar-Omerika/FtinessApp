@@ -123,7 +123,7 @@ export default function EditProfile() {
 					</Text>
 				</View>
 			</TouchableOpacity>
-			<TouchableOpacity>
+			<TouchableOpacity onPress={() => navigation.navigate("Profile")}>
 				<View style={styles.button}>
 					<Text
 						style={{
