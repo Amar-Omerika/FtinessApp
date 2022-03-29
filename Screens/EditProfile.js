@@ -28,6 +28,7 @@ export default function EditProfile() {
 				image,
 			})
 		);
+		//samo dodamo push kada zelimo dodati kao array
 		navigation.navigate("Profile");
 	};
 

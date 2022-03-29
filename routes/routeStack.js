@@ -27,6 +27,7 @@ import intermediate from "../assets/intermediate.png";
 import advanced from "../assets/advanced.png";
 import NewGoals from "../Screens/NewGoals";
 import MyWorkouts from "../Screens/MyWorkouts";
+import MyWeight from "../Screens/MyWeight";
 const Stack = createNativeStackNavigator();
 export default function routeStack() {
 	const dispatch = useDispatch();
@@ -96,6 +97,19 @@ export default function routeStack() {
 				<Stack.Screen
 					name="MyWorkouts"
 					component={MyWorkouts}
+					options={{
+						headerStyle: {
+							backgroundColor: "#7c0000",
+						},
+						headerTintColor: "#fff",
+						headerTitleStyle: {
+							fontWeight: "bold",
+						},
+					}}
+				/>
+				<Stack.Screen
+					name="MyWeight"
+					component={MyWeight}
 					options={{
 						headerStyle: {
 							backgroundColor: "#7c0000",

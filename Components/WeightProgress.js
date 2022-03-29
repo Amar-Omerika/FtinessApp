@@ -1,10 +1,12 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import weight from "../assets/weight.png";
 export default function WeightProgress() {
+	const navigation = useNavigation();
 	return (
 		<View style={styles.container}>
-			<TouchableOpacity>
+			<TouchableOpacity onPress={() => navigation.navigate("MyWeight")}>
 				<View style={styles.weightProgress}>
 					<View style={{ flexDirection: "row" }}>
 						<Image

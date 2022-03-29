@@ -69,6 +69,33 @@ export default function MyWorkouts() {
 				</Text>
 				<Text style={{ color: "white", fontSize: 20 }}>{text}</Text>
 			</View>
+			<TouchableOpacity>
+				<View style={styles.datePicker}>
+					<Text
+						style={{
+							color: "white",
+							alignSelf: "center",
+							marginVertical: 12,
+							fontSize: 20,
+							fontWeight: "bold",
+						}}
+					>
+						Add Workouts
+					</Text>
+				</View>
+			</TouchableOpacity>
+			<View style={{ marginLeft: 10 }}>
+				<Text
+					style={{
+						color: "white",
+						marginVertical: 12,
+						fontSize: 30,
+						fontWeight: "bold",
+					}}
+				>
+					Workouts
+				</Text>
+			</View>
 			{show && (
 				<DateTimePicker
 					testID="dateTimePicker"
