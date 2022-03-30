@@ -79,7 +79,7 @@ export default function EditProfile() {
 			<View
 				style={{
 					flexDirection: "row",
-					backgroundColor: "#C0C0C0",
+					backgroundColor: "white",
 					marginTop: 30,
 					borderRadius: 8,
 					marginLeft: 10,
@@ -96,7 +96,7 @@ export default function EditProfile() {
 			<View
 				style={{
 					flexDirection: "row",
-					backgroundColor: "#C0C0C0",
+					backgroundColor: "white",
 					marginTop: 30,
 					borderRadius: 8,
 					marginLeft: 10,
@@ -161,9 +161,7 @@ const styles = StyleSheet.create({
 	input: {
 		padding: 14,
 		borderColor: "#B9C4CA",
-		borderWidth: 1,
-		color: "white",
-		borderRadius: 4,
+		color: "black",
 		fontSize: 16,
 	},
 	button: {

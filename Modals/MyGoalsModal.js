@@ -26,6 +26,7 @@ export default function MyGoalsModal() {
 		}
 		//console.log(parsed);
 	};
+
 	useEffect(() => {
 		let mounted = true;
 		if (mounted) getDataFromUser();
