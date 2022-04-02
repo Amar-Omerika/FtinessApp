@@ -20,7 +20,7 @@ export default function HeaderProfile() {
 		let mounted = true;
 		if (mounted) getDataFromUser();
 		return () => (mounted = false);
-	}, []);
+	}, [data]);
 
 	return (
 		<View style={styles.container}>
@@ -40,7 +40,7 @@ export default function HeaderProfile() {
 					/>
 				</View>
 				<View style={{ marginTop: 50, marginLeft: 30 }}>
-					<Text style={{ color: "white", fontSize: 30 }}>Hi</Text>
+					<Text style={{ color: "white", fontSize: 30 }}>Hi,</Text>
 					<Text style={{ color: "white", fontSize: 20 }}>{data.username}</Text>
 				</View>
 				<View>

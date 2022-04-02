@@ -62,7 +62,7 @@ export default function Profile() {
 					<MyGoals />
 					<WeightProgress />
 				</View>
-				<TouchableOpacity onPress={() => navigation.navigate("MyWorkouts")}>
+				{/* <TouchableOpacity onPress={() => navigation.navigate("MyWorkouts")}>
 					<View style={styles.btnWorkouts}>
 						<View style={{ flexDirection: "row" }}>
 							<Text
@@ -88,10 +88,31 @@ export default function Profile() {
 							</Text>
 						</View>
 					</View>
-				</TouchableOpacity>
+				</TouchableOpacity> */}
 				<View style={{ alignSelf: "center", marginTop: 40 }}>
 					<TouchableOpacity onPress={() => handleLogout()}>
-						<Text style={{ color: "white" }}>Logout</Text>
+						<View
+							style={{
+								height: 50,
+								borderRadius: 10,
+								marginRight: 20,
+								marginLeft: 20,
+								backgroundColor: "#7C0000",
+								width: 300,
+							}}
+						>
+							<Text
+								style={{
+									color: "white",
+									alignSelf: "center",
+									marginVertical: 10,
+									fontSize: 20,
+									fontWeight: "bold",
+								}}
+							>
+								Logout
+							</Text>
+						</View>
 					</TouchableOpacity>
 				</View>
 				{/*<TouchableOpacity onPress={() => clearAsyncStorage()}>

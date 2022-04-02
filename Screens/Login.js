@@ -11,19 +11,19 @@ import {
 } from "react-native";
 import { useDispatch } from "react-redux";
 import landingImage from "../assets/landingImage.png";
-import mailIcon from "../assets/mailIcon.png";
+import person from "../assets/person.png";
 import passwordIcon from "../assets/passwordIcon.png";
 import { loginsucc } from "../Store/user";
 import { useNavigation } from "@react-navigation/core";
 import Message from "../Components/Message";
 export default function Login() {
 	const navigation = useNavigation();
-	const [email, setEmail] = useState("mojmail@gmail.com");
-	const [password, setPassword] = useState("12341234");
+	const [username, setUsername] = useState("");
+	const [password, setPassword] = useState("");
 	const [message, setMessage] = useState(false);
 	const dispatch = useDispatch();
 	const handleLogin = async () => {
-		if (!email || !password) {
+		if (!username || !password) {
 			if (!message) {
 				setMessage("Please check your inputs");
 			}
@@ -31,7 +31,7 @@ export default function Login() {
 		}
 		dispatch(
 			loginsucc({
-				email,
+				username,
 				password,
 			})
 		);
@@ -74,7 +74,7 @@ export default function Login() {
 							}}
 						>
 							<Image
-								source={mailIcon}
+								source={person}
 								style={{ marginTop: 10, marginLeft: 10, marginRight: 10 }}
 							/>
 							<TextInput
@@ -84,9 +84,9 @@ export default function Login() {
 									fontSize: 18,
 									color: "white",
 								}}
-								value={email}
-								onChangeText={setEmail}
-								placeholder="Email..."
+								value={username}
+								onChangeText={setUsername}
+								placeholder="Username..."
 							></TextInput>
 						</View>
 						<View

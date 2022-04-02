@@ -18,7 +18,7 @@ export default function Header() {
 		let mounted = true;
 		if (mounted) getDataFromUser();
 		return () => (mounted = false);
-	}, []);
+	}, [data]);
 	return (
 		<View
 			style={{ flexDirection: "row", backgroundColor: "#7c0000", height: 80 }}

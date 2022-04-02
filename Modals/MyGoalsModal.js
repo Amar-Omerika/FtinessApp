@@ -31,7 +31,7 @@ export default function MyGoalsModal() {
 		let mounted = true;
 		if (mounted) getDataFromUser();
 		return () => (mounted = false);
-	}, []);
+	}, [data]);
 	const AddGoals = () => {
 		navigation.navigate("NewGoals");
 		setModalVisible(!modalVisible);
@@ -54,7 +54,7 @@ export default function MyGoalsModal() {
 								marginBottom: 10,
 								fontSize: 20,
 								fontWeight: "bold",
-								color: "white",
+								color: "black",
 							}}
 						>
 							My Goals
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
 	},
 	modalView: {
 		marginTop: 151,
-		backgroundColor: "#C4C4C4",
+		backgroundColor: "#D9D7D7",
 		borderRadius: 20,
 		padding: 35,
 		paddingBottom: 5,

@@ -24,7 +24,7 @@ export default function MyWeight() {
 		if (value) {
 			setData(parsed);
 		}
-		console.log(parsed);
+		//console.log(parsed);
 	};
 
 	useEffect(() => {
@@ -32,18 +32,19 @@ export default function MyWeight() {
 		if (mounted) getDataFromUser();
 		return () => (mounted = false);
 	}, []);
-	// useEffect(() => {
-	// 	getMealData();
-	// }, []);
 
-	// const getMealData = async () => {
-	// 	const response = await fetch(
-	// 		`https://api.spoonacular.com/mealplanner/generate?apiKey=5d18562865c34d779598cfa09921d69f&timeFrame=day&targetCalories=${calories}`
-	// 	);
-	// 	const data = await response.json();
-	// 	setMealData(data);
-	// 	console.log(mealData);
-	// };
+	useEffect(() => {
+		getMealData();
+	}, []);
+
+	const getMealData = async () => {
+		const response = await fetch(
+			`https://api.spoonacular.com/mealplanner/generate?apiKey=5d18562865c34d779598cfa09921d69f&timeFrame=day&targetCalories=${calories}`
+		);
+		const datas = await response.json();
+		setMealData(datas);
+		//console.log(mealData);
+	};
 	return (
 		<View
 			style={{
@@ -71,7 +72,7 @@ export default function MyWeight() {
 							marginLeft: 10,
 						}}
 					>
-						{data.weight}
+						{data.weight} KG
 					</Text>
 				</View>
 				<View style={{ flex: 1, alignSelf: "flex-end", marginRight: 2 }}>
